@@ -1,5 +1,5 @@
 {
-  "name": "versioned-storage",
+  "name": "@CatChen/versioned-storage",
   "version": "1.2.4",
   "description": "Local storage with versioning.",
   "main": "index.js",
@@ -12,6 +12,9 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/CatChen/versioned-storage.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   },
   "keywords": [
     "versioned",
