@@ -81,4 +81,4 @@ class Storage<T> {
   }
 }
 
-export default Storage;
+module.exports = Storage;
