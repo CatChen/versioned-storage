@@ -35,3 +35,57 @@ userStorage.write({ id: 42 });
 const user = userStorage.read();
 // Flow infers user being User because userStorage.read is typed as () => User.
 ```
+
+## Features
+
+1. Unlike `localStorage`, our API never throws error. No need to wrap everything in try-catch.
+2. Read and write values as JSON instead of string.
+3. Flow typing support for JSON structure being read and written.
+
+## API
+
+The API is very simple. There are only 4 functions you need to know.
+
+### `Storage` class
+
+Create a storage by calling `Storage` class constructor with a name and a version.
+
+```
+const settingsStorage = new Storage('settings', 1);
+```
+
+When a storage's schema is changed and no longer compatible, bump the version number and old data will be purged automatically.
+
+```
+const settingsStorage = new Storage('settings', 2); // Erase all data from version 1
+```
+
+### `Storage.prototype.write` method
+
+Write data to a named storage by calling `write` method on its instance.
+
+```
+settingsStorage.write({
+  brightness: 80,
+  volume: 100,
+});
+```
+
+### `Storage.prototype.read` method
+
+Read data from a named storage by calling `read` method on its instance.
+
+```
+const {
+  brightness,
+  volume,
+} = settingsStorage.read();
+```
+
+### `Storage.reset` static method
+
+Clear all data across all named storages by calling the static method `reset`.
+
+```
+Storage.reset();
+```
