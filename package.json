@@ -1,0 +1,37 @@
+{
+  "name": "versioned-storage",
+  "version": "1.0.0",
+  "description": "Local storage with versioning.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CatChen/versioned-storage.git"
+  },
+  "keywords": [
+    "versioned",
+    "storage"
+  ],
+  "author": "catchen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CatChen/versioned-storage/issues"
+  },
+  "homepage": "https://github.com/CatChen/versioned-storage#readme",
+  "devDependencies": {
+    "babel-eslint": "^10.0.3",
+    "babel-jest": "^24.9.0",
+    "babel-plugin-transform-flow-strip-types": "^6.22.0",
+    "codecov": "^3.6.1",
+    "eslint": "^6.6.0",
+    "eslint-plugin-flowtype": "^4.3.0",
+    "flow-bin": "^0.111.3",
+    "flow-remove-types": "^2.111.3",
+    "husky": "^3.0.9",
+    "jest": "^24.9.0",
+    "prettier": "^1.19.1",
+    "pretty-quick": "^2.0.1"
+  }
+}
