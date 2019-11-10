@@ -1,0 +1,14 @@
+language: node_js
+install:
+  - yarn install
+node_js:
+  - stable
+cache:
+  yarn: true
+  directories:
+    - node_modules
+script:
+  - yarn build
+  - yarn flow
+  - yarn test src --coverage --collectCoverageFrom=src/** && yarn codecov -C
+  
