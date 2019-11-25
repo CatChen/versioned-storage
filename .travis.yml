@@ -2,7 +2,7 @@ language: node_js
 install:
   - yarn install
 node_js:
-  - stable
+  - lts/*
 cache:
   yarn: true
   directories:
@@ -11,4 +11,3 @@ script:
   - yarn build
   - yarn flow
   - yarn test src --coverage --collectCoverageFrom=src/** && yarn codecov -C
-  
