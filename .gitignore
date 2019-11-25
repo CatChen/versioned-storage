@@ -62,3 +62,6 @@ typings/
 
 # production
 /lib
+
+# misc
+.DS_Store
