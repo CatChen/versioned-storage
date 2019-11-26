@@ -20,3 +20,4 @@ deploy:
   on:
     repo: CatChen/versioned-storage
     branch: master
+    tags: true
