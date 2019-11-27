@@ -1,4 +1,4 @@
-export class Storage<T> {
+export default class Storage<T> {
   constructor(name: string, version: number);
   read(): T | null;
   write(value: T): void;
