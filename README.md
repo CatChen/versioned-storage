@@ -1,6 +1,6 @@
 # versioned-storage [![Build Status](https://travis-ci.org/CatChen/versioned-storage.svg?branch=master)](https://travis-ci.org/CatChen/versioned-storage) [![codecov](https://codecov.io/gh/CatChen/versioned-storage/branch/master/graph/badge.svg)](https://codecov.io/gh/CatChen/versioned-storage)
 
-Use named, versioned and typed JSON storage through `localStorage`! ([TypeScript](https://www.typescriptlang.org/) or [Flow](https://flow.org/).)
+Use named, versioned and typed ([TypeScript](https://www.typescriptlang.org/) and [Flow](https://flow.org/)) JSON storage through `localStorage`!
 
 ## Examples
 
@@ -40,7 +40,7 @@ const user = userStorage.read();
 
 1. Unlike `localStorage`, our API never throws error. No need to wrap everything in try-catch.
 2. Read and write values as JSON instead of string.
-3. Flow typing support for JSON structure being read and written.
+3. TypeScript and Flow typing support for JSON structure being read and written.
 
 ## API
 
