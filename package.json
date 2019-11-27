@@ -3,9 +3,10 @@
   "version": "1.0.6",
   "description": "Local storage with versioning.",
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "test": "jest src",
-    "build": "babel src -d lib --ignore '**/__tests__/**' && flow-copy-source -v -i '**/__tests__/**' src lib",
+    "build": "babel src -d lib --ignore '**/__tests__/**' && flow-copy-source -v -i '**/__tests__/**' src lib && tsc",
     "prepublish": "npm run build"
   },
   "repository": {
@@ -69,6 +70,7 @@
     "husky": "^3.0.9",
     "jest": "^24.9.0",
     "prettier": "^1.19.1",
-    "pretty-quick": "^2.0.1"
+    "pretty-quick": "^2.0.1",
+    "typescript": "^3.7.2"
   }
 }
