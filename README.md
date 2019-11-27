@@ -1,6 +1,6 @@
 # versioned-storage [![Build Status](https://travis-ci.org/CatChen/versioned-storage.svg?branch=master)](https://travis-ci.org/CatChen/versioned-storage) [![codecov](https://codecov.io/gh/CatChen/versioned-storage/branch/master/graph/badge.svg)](https://codecov.io/gh/CatChen/versioned-storage)
 
-Use named, versioned and typed JSON storage through `localStorage`! (Typing support is only available for [Flow](https://flow.org/).)
+Use named, versioned and typed JSON storage through `localStorage`! ([TypeScript](https://www.typescriptlang.org/) or [Flow](https://flow.org/).)
 
 ## Examples
 
