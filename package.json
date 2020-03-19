@@ -64,7 +64,7 @@
     "codecov": "^3.6.1",
     "eslint": "^6.6.0",
     "eslint-plugin-flowtype": "^4.3.0",
-    "flow-bin": "^0.120.1",
+    "flow-bin": "^0.121.0",
     "flow-copy-source": "^2.0.8",
     "flow-remove-types": "^2.111.3",
     "husky": "^4.0.0",
