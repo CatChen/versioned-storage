@@ -2046,17 +2046,17 @@ flow-copy-source@^2.0.8:
     kefir "^3.7.3"
     yargs "^15.0.1"
 
-flow-parser@^0.127.0:
-  version "0.127.0"
-  resolved "https://registry.yarnpkg.com/flow-parser/-/flow-parser-0.127.0.tgz#e23ac72f3e7d2c25a6918c6d695db9f2e6c7a913"
-  integrity sha512-T4T92hVeVtrkYYvU01L2KFANsA0TJQrgy46efIU/JBxDhVjxIdS7KzaBEsPJu7RPOM44FCR7wcFQg6rWtGGrLQ==
+flow-parser@^0.129.0:
+  version "0.129.0"
+  resolved "https://registry.yarnpkg.com/flow-parser/-/flow-parser-0.129.0.tgz#5924357da8f4982c11e02883a6ed10e954e61ea4"
+  integrity sha512-kzxyoEl8vG0JF0/h/u0UjALXmsGvwU2NBfKczCSNO/It2fKb8hz1gMt05OuZAlMLYXcvgjntWJadIABeKGPK4g==
 
 flow-remove-types@^2.111.3:
-  version "2.127.0"
-  resolved "https://registry.yarnpkg.com/flow-remove-types/-/flow-remove-types-2.127.0.tgz#b3611e3738e4a51b2a94fe858bad149c99f47fc9"
-  integrity sha512-4nGhabtIh2A4E6TQWklopmye1c+6h1GEu5xa6WjlfWJMoXIbjlM368t/RdFr5+MfVR0D0xzQvOebCjue9V0zMg==
+  version "2.129.0"
+  resolved "https://registry.yarnpkg.com/flow-remove-types/-/flow-remove-types-2.129.0.tgz#ab5b88a5663802ab0bf59b6488a789609e3ab275"
+  integrity sha512-ucESHZUDQvEFzjRKstZMFBVIciRvXtKpVyPsJT+poIyOIxuPoCLiU/8HHnMBN9XHDWSJ2YJ91mv97n17NmI1Bg==
   dependencies:
-    flow-parser "^0.127.0"
+    flow-parser "^0.129.0"
     pirates "^3.0.2"
     vlq "^0.2.1"
 
