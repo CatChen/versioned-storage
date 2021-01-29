@@ -1,0 +1,5 @@
+import Storage from './lib/Storage';
+
+declare module 'versioned-storage' {
+  declare module.exports: Storage;
+}
