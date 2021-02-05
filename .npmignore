@@ -18,8 +18,8 @@
 .env.production.local
 .babelrc
 .flowconfig
-.travis.yml
 .mergify.yml
+.github
 
 npm-debug.log*
 yarn-debug.log*
