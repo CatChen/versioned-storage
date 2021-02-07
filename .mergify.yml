@@ -3,10 +3,10 @@ pull_request_rules:
     conditions:
       - author=dependabot-preview[bot]
       - 'status-success=LGTM analysis: JavaScript'
-      - status-success=Node.js CI / build (10.x) (pull_request)
-      - status-success=Node.js CI / build (12.x) (pull_request)
-      - status-success=Node.js CI / build (14.x) (pull_request)
-      - status-success=Node.js CI / build (15.x) (pull_request)
+      - status-success=build (10.x)
+      - status-success=build (12.x)
+      - status-success=build (14.x)
+      - status-success=build (15.x)
       - status-success=codecov/patch
     actions:
       merge:
@@ -16,10 +16,10 @@ pull_request_rules:
     conditions:
       - author=dependabot-preview[bot]
       - 'status-neutral=LGTM analysis: JavaScript'
-      - status-success=Node.js CI / build (10.x) (pull_request)
-      - status-success=Node.js CI / build (12.x) (pull_request)
-      - status-success=Node.js CI / build (14.x) (pull_request)
-      - status-success=Node.js CI / build (15.x) (pull_request)
+      - status-success=build (10.x)
+      - status-success=build (12.x)
+      - status-success=build (14.x)
+      - status-success=build (15.x)
       - status-success=codecov/patch
     actions:
       merge:
