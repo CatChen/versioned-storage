@@ -1,0 +1,37 @@
+version: 2
+registries:
+  npm-registry-npm-pkg-github-com-catchen:
+    type: npm-registry
+    url: https://npm.pkg.github.com/CatChen
+    token: "${{secrets.NPM_REGISTRY_NPM_PKG_GITHUB_COM_CATCHEN_TOKEN}}"
+
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "03:00"
+    timezone: US/Pacific
+  open-pull-requests-limit: 10
+  reviewers:
+  - catchen
+  assignees:
+  - catchen
+  ignore:
+  - dependency-name: eslint-plugin-flowtype
+    versions:
+    - 5.2.1
+    - 5.7.0
+    - 5.7.1
+  - dependency-name: eslint
+    versions:
+    - 7.22.0
+    - 7.24.0
+  - dependency-name: husky
+    versions:
+    - 5.1.0
+  - dependency-name: typescript
+    versions:
+    - 4.1.4
+  registries:
+  - npm-registry-npm-pkg-github-com-catchen
