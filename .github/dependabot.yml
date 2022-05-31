@@ -1,20 +1,24 @@
 version: 2
 registries:
+  npm-npmjs:
+    type: npm-registry
+    url: https://registry.npmjs.org
   npm-registry-npm-pkg-github-com-catchen:
     type: npm-registry
     url: https://npm.pkg.github.com/CatChen
-    token: "${{secrets.NPM_REGISTRY_NPM_PKG_GITHUB_COM_CATCHEN_TOKEN}}"
+    token: '${{secrets.NPM_REGISTRY_NPM_PKG_GITHUB_COM_CATCHEN_TOKEN}}'
 
 updates:
-- package-ecosystem: npm
-  directory: "/"
-  schedule:
-    interval: daily
-    time: "03:00"
-    timezone: US/Pacific
-  reviewers:
-  - catchen
-  assignees:
-  - catchen
-  registries:
-  - npm-registry-npm-pkg-github-com-catchen
+  - package-ecosystem: npm
+    directory: '/'
+    schedule:
+      interval: daily
+      time: '03:00'
+      timezone: US/Pacific
+    reviewers:
+      - catchen
+    assignees:
+      - catchen
+    registries:
+      - npm-npmjs
+      - npm-registry-npm-pkg-github-com-catchen
