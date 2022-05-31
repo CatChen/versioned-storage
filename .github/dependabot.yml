@@ -24,3 +24,14 @@ updates:
       - npm-npmjs
       - npm-registry-npm-pkg-github-com-catchen
     open-pull-requests-limit: 10
+
+  - package-ecosystem: 'github-actions'
+    directory: '/'
+    schedule:
+      interval: daily
+      time: '03:00'
+      timezone: US/Pacific
+    reviewers:
+      - catchen
+    assignees:
+      - catchen
