@@ -3,7 +3,6 @@ pull_request_rules:
     conditions:
       - author=dependabot[bot]
       - 'status-success=LGTM analysis: JavaScript'
-      - status-success=build (10.x)
       - status-success=build (12.x)
       - status-success=build (14.x)
       - status-success=build (16.x)
@@ -17,7 +16,6 @@ pull_request_rules:
     conditions:
       - author=dependabot[bot]
       - 'status-neutral=LGTM analysis: JavaScript'
-      - status-success=build (10.x)
       - status-success=build (12.x)
       - status-success=build (14.x)
       - status-success=build (16.x)
