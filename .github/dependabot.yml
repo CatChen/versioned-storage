@@ -3,6 +3,7 @@ registries:
   npm-npmjs:
     type: npm-registry
     url: https://registry.npmjs.org
+    token: '${{secrets.NPM_TOKEN}}'
   npm-registry-npm-pkg-github-com-catchen:
     type: npm-registry
     url: https://npm.pkg.github.com/CatChen
