@@ -6,7 +6,8 @@ pull_request_rules:
       - status-success=build (10.x)
       - status-success=build (12.x)
       - status-success=build (14.x)
-      - status-success=build (15.x)
+      - status-success=build (16.x)
+      - status-success=build (18.x)
       - status-success=codecov/patch
     actions:
       merge:
@@ -19,7 +20,8 @@ pull_request_rules:
       - status-success=build (10.x)
       - status-success=build (12.x)
       - status-success=build (14.x)
-      - status-success=build (15.x)
+      - status-success=build (16.x)
+      - status-success=build (18.x)
       - status-success=codecov/patch
     actions:
       merge:
