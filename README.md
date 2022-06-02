@@ -38,9 +38,8 @@ const user = userStorage.read();
 
 ## Features
 
-1. Unlike `localStorage`, our API never throws error. No need to wrap everything in try-catch.
-2. Read and write values as JSON instead of string.
-3. TypeScript and Flow typing support for JSON structure being read and written.
+1. Read and write values as JSON instead of string.
+2. TypeScript and Flow typing support for JSON structure being read and written.
 
 ## API
 
@@ -58,6 +57,27 @@ When a storage's schema is changed and no longer compatible, bump the version nu
 
 ```
 const settingsStorage = new Storage('settings', 2); // Erase all data from version 1
+```
+
+Migrate data from previous storage schema before purging if necessary.
+
+```
+let settingsStorage;
+try {
+  settingsStorage = new Storage('settings'); // Get the storage of existing version
+  switch (settingsStorage.version) {
+    case 1:
+      // Read v1 settings, migrate it to v3 schema and store it
+      break;
+    case 2:
+      // Read v2 settings, migrate it to v3 schema and store it
+      break;
+    default:
+      throw new Error('Incompatible legacy storage schema');
+  }
+} catch (_error) {
+  settingsStorage = new Storage('settings', 3); // Start from scratch if not migratable
+}
 ```
 
 ### `Storage.prototype.write` method
