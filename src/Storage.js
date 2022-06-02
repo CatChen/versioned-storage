@@ -38,14 +38,27 @@ class Storage<T> {
   name: string;
   version: number;
 
-  constructor(name: string, version: number) {
-    this.name = name;
-    this.version = version;
+  constructor(name: string, version?: number) {
+    if (version) {
+      const parsedVersion = parseInt(version, 10);
+      if (!parsedVersion || parsedVersion <= 0) {
+        throw new Error('version has to be a positive integer');
+      }
+      this.name = name;
+      this.version = parsedVersion;
 
-    const previousVersion = parseInt(get(name), 10) || 0;
-    if (version > previousVersion) {
-      remove(`${name}:${previousVersion}`);
-      set(name, version.toString(10));
+      const previousVersion = parseInt(get(name), 10) || 0;
+      if (parsedVersion > previousVersion) {
+        remove(`${name}:${previousVersion}`);
+        set(name, version.toString(10));
+      }
+    } else {
+      const existingVersion = parseInt(get(name), 10) || 0;
+      if (!existingVersion) {
+        throw new Error(`There is no existing storage named ${name}`);
+      }
+      this.name = name;
+      this.version = existingVersion;
     }
   }
 

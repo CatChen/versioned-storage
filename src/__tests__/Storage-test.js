@@ -137,3 +137,44 @@ it('will throw if localStorage throws', () => {
     Storage.reset();
   }).toThrow();
 });
+
+it('uses existing version when version is omitted', () => {
+  getItem.mockImplementationOnce((key) => {
+    expect(key).toBe(STORAGE_NAME);
+    return STORAGE_VERSION;
+  });
+  const storage = new Storage(STORAGE_NAME);
+  expect(storage.version).toBe(STORAGE_VERSION);
+  getItem.mockImplementationOnce((key) => {
+    expect(key).toBe(`${STORAGE_NAME}:${STORAGE_VERSION}`);
+    return JSON.stringify(TEST_OBJECT);
+  });
+  const json = storage.read();
+  expect(json).toEqual(TEST_OBJECT);
+});
+
+it('will throw if there is no existing version when version is omitted', () => {
+  getItem.mockImplementationOnce((key) => {
+    expect(key).toBe(STORAGE_NAME);
+    return undefined;
+  });
+  expect(() => {
+    new Storage(STORAGE_NAME);
+  }).toThrow();
+});
+
+it('will throw if version is a negative number', () => {
+  expect(() => {
+    new Storage(STORAGE_NAME, -STORAGE_VERSION);
+  }).toThrow();
+});
+
+it('will throw if existing version is corrupted', () => {
+  getItem.mockImplementationOnce((key) => {
+    expect(key).toBe(STORAGE_NAME);
+    return '**' + STORAGE_VERSION + '**';
+  });
+  expect(() => {
+    new Storage(STORAGE_NAME, -STORAGE_VERSION);
+  }).toThrow();
+});
