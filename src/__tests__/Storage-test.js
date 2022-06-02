@@ -162,3 +162,19 @@ it('will throw if there is no existing version when version is omitted', () => {
     new Storage(STORAGE_NAME);
   }).toThrow();
 });
+
+it('will throw if version is a negative number', () => {
+  expect(() => {
+    new Storage(STORAGE_NAME, -STORAGE_VERSION);
+  }).toThrow();
+});
+
+it('will throw if existing version is corrupted', () => {
+  getItem.mockImplementationOnce((key) => {
+    expect(key).toBe(STORAGE_NAME);
+    return '**' + STORAGE_VERSION + '**';
+  });
+  expect(() => {
+    new Storage(STORAGE_NAME, -STORAGE_VERSION);
+  }).toThrow();
+});
