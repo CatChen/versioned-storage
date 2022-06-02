@@ -19,7 +19,7 @@ jobs:
       - run: yarn install
       - run: yarn build
       - run: yarn flow
-      - run: yarn test src --coverage --collectCoverageFrom=src/** && yarn codecov -C
+      - run: yarn test src
 
   publish-npm:
     needs: build
