@@ -67,12 +67,14 @@
     "flow-bin": "^0.185.0",
     "flow-copy-source": "^2.0.8",
     "flow-remove-types": "^2.111.3",
-    "husky": "7",
     "jest": "^28.1.0",
     "json": "^11.0.0",
     "pinst": "^3.0.0",
     "prettier": "^2.0.1",
     "pretty-quick": "^3.0.0",
     "typescript": "^4.0.2"
+  },
+  "optionalDependencies": {
+    "husky": "7"
   }
 }
