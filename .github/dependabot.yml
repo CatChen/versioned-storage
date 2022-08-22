@@ -23,7 +23,8 @@ updates:
     registries:
       - npm-npmjs
       - npm-registry-npm-pkg-github-com-catchen
-    open-pull-requests-limit: 10
+    labels:
+      - accept2ship
 
   - package-ecosystem: 'github-actions'
     directory: '/'
@@ -35,3 +36,5 @@ updates:
       - catchen
     assignees:
       - catchen
+    labels:
+      - accept2ship
