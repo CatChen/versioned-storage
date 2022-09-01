@@ -24,7 +24,7 @@ updates:
       - npm-npmjs
       - npm-registry-npm-pkg-github-com-catchen
     labels:
-      - accept2ship
+      - pass2ship
 
   - package-ecosystem: 'github-actions'
     directory: '/'
@@ -37,4 +37,4 @@ updates:
     assignees:
       - catchen
     labels:
-      - accept2ship
+      - pass2ship
