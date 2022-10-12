@@ -9,8 +9,9 @@ jobs:
   release:
     runs-on: ubuntu-latest
     outputs:
-      base_tag: ${{ steps.create-release.outputs.base_tag }}
-      head_tag: ${{ steps.create-release.outputs.head_tag }}
+      base-tag: ${{ steps.git-push.outputs.base-tag }}
+      head-tag: ${{ steps.git-push.outputs.head-tag }}
+      branch-name: ${{ steps.git-push.outputs.branch-name }}
     steps:
       - uses: actions/checkout@v3
         with:
@@ -101,5 +102,5 @@ jobs:
 
   publish:
     needs: release
-    if: ${{ needs.release.outputs.head_tag != '' }}
+    if: ${{ needs.release.outputs.head-tag != '' }}
     uses: ./.github/workflows/npm-publish.yml
