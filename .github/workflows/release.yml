@@ -8,7 +8,7 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
-    if: ${ github.event.pull_request.merged == true && startsWith(github.head_ref, 'workflows/releases/') }}
+    if: ${{ github.event.pull_request.merged == true && startsWith(github.head_ref, 'workflows/releases/') }}
     steps:
       - id: create-release
         env:
