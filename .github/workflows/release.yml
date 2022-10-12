@@ -49,7 +49,7 @@ jobs:
               -F generate_release_notes=true
           fi
 
-    publish:
-      needs: release
-      if: ${{ needs.release.outputs.head_tag != '' }}
-      uses: ./.github/workflows/npm-publish.yml
+  publish:
+    needs: release
+    if: ${{ needs.release.outputs.head_tag != '' }}
+    uses: ./.github/workflows/npm-publish.yml
