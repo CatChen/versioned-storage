@@ -51,7 +51,7 @@ jobs:
             HEAD_TAG=$(git describe --abbrev=0 --tags)
             echo "::notice:: Head tag is $HEAD_TAG"
             echo "::set-output name=head-tag::$HEAD_TAG"
-            git push --follow-tags
+            git push --follow-tags --force-with-lease
 
             gh api \
               --method POST \
