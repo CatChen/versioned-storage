@@ -21,6 +21,17 @@ jobs:
           node-version-file: '.nvmrc'
           check-latest: true
 
+      - id: git-config
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - id: gh-auth
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh auth setup-git
+
       - id: create-release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
