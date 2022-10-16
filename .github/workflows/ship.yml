@@ -21,7 +21,7 @@ on:
   check_suite:
     types: [completed]
   workflow_run:
-    branches: ['[0-9]+-[0-9]+-*']
+    branches-ignore: [master]
     workflows: ['Node.js CI', 'CodeQL']
     types: [completed]
 
