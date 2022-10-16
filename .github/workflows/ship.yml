@@ -35,7 +35,6 @@ concurrency:
       github.sha ||
       github.ref
     }}
-  cancel-in-progress: true
 
 jobs:
   concurrency-group:
