@@ -19,11 +19,6 @@ on:
     branches: [master, '[0-9]+-[0-9]+-*']
   schedule:
     - cron: '0 3 * * 0'
-  workflow_call:
-    inputs:
-      tag:
-        required: false
-        type: string
 
 jobs:
   analyze:
@@ -41,8 +36,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-        with:
-          ref: ${{ inputs.tag }}
 
       # Initializes the CodeQL tools for scanning.
       - name: Initialize CodeQL
