@@ -9,10 +9,10 @@ on:
   pull_request:
     branches: [master, '[0-9]+-[0-9]+-*']
   workflow_call:
-  workflow_run:
-    branches: ['[0-9]+-[0-9]+-*']
-    workflows: ['Tag']
-    types: [completed]
+    inputs:
+      tag:
+        required: false
+        type: string
 
 jobs:
   build:
@@ -25,6 +25,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+        with:
+          ref: ${{ inputs.tag }}
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:

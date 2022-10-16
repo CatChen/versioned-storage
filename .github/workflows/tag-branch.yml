@@ -85,3 +85,15 @@ jobs:
           PR_NUMBER=`gh pr view | grep 'number:' | cut -f 2`
           echo "::set-output name=pr-number::$PR_NUMBER"
           echo "::notice::PR number is $PR_NUMBER"
+
+  nodejs:
+    needs: tag
+    uses: ./.github/workflows/node.js.yml
+    with:
+      tag: ${{ needs.tag.outputs.branch-name }}
+
+  codeql:
+    needs: tag
+    uses: ./.github/workflows/codeql-analysis.yml
+    with:
+      tag: ${{ needs.tag.outputs.branch-name }}
