@@ -4,6 +4,10 @@ on:
   pull_request:
     branches: [master]
     types: [closed]
+  workflow_run:
+    branches: [master]
+    workflows: ['Ship']
+    types: [completed]
 
 jobs:
   release:
