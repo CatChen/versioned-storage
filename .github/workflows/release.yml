@@ -13,6 +13,8 @@ jobs:
   release:
     runs-on: ubuntu-latest
     if: ${{ github.event.pull_request.merged == true && startsWith(github.head_ref, 'workflows/releases/') }}
+    outputs:
+      head-tag: ${{ steps.create-release.outputs.head-tag }}
     steps:
       - id: create-release
         env:
