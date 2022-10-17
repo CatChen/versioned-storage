@@ -74,6 +74,7 @@ jobs:
           fi
 
       - id: create-release
+        if: ${{ steps.git-push.outputs.head-tag }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           HEAD_TAG: ${{ steps.git-push.outputs.head-tag }}
@@ -88,4 +89,7 @@ jobs:
 
   publish:
     needs: release
+    if: ${{ needs.release.outputs.head-tag != '' }}
     uses: ./.github/workflows/npm-publish.yml
+    with:
+      tag: ${{ needs.release.outputs.head-tag }}

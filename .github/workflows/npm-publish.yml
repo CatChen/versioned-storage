@@ -7,6 +7,10 @@ on:
   release:
     types: [created]
   workflow_call:
+    inputs:
+      tag:
+        type: string
+        required: false
   workflow_dispatch:
 
 jobs:
@@ -14,6 +18,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          ref: ${{ inputs.tag }}
       - uses: actions/setup-node@v3
         with:
           node-version-file: '.nvmrc'
@@ -32,6 +38,8 @@ jobs:
       packages: write
     steps:
       - uses: actions/checkout@v3
+        with:
+          ref: ${{ inputs.tag }}
       - uses: actions/setup-node@v3
         with:
           node-version-file: '.nvmrc'
