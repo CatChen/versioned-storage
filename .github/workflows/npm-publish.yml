@@ -23,7 +23,7 @@ jobs:
       - run: yarn build
       - run: npm publish
         env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
 
   publish-github:
     runs-on: ubuntu-latest
