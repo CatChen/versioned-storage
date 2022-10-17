@@ -11,7 +11,6 @@ jobs:
     outputs:
       base-tag: ${{ steps.git-push.outputs.base-tag }}
       head-tag: ${{ steps.git-push.outputs.head-tag }}
-      branch-name: ${{ steps.git-push.outputs.branch-name }}
     steps:
       - uses: actions/checkout@v3
         with:
@@ -64,24 +63,5 @@ jobs:
             echo "::notice:: Head tag is $HEAD_TAG"
             echo "::set-output name=head-tag::$HEAD_TAG"
 
-            BRANCH_NAME="workflows/releases/$HEAD_TAG"
-            echo "::notice:: Branch name is $BRANCH_NAME"
-            echo "::set-output name=branch-name::$BRANCH_NAME"
-
-            git checkout -b "$BRANCH_NAME"
-            git push -f --set-upstream origin "$BRANCH_NAME" --follow-tags
+            git push -f --set-upstream origin master --follow-tags
           fi
-
-      - id: create-pr
-        if: ${{ steps.git-push.outputs.head-tag != '' }}
-        env:
-          GH_TOKEN: ${{ secrets.GIT_TAG_TOKEN }}
-          HEAD_TAG: ${{ steps.git-push.outputs.head-tag }}
-        run: |
-          gh pr create \
-            --base "master" \
-            --title "Release $HEAD_TAG" \
-            --body "#pass2ship"
-          PR_NUMBER=`gh pr view | grep 'number:' | cut -f 2`
-          echo "::set-output name=pr-number::$PR_NUMBER"
-          echo "::notice::PR number is $PR_NUMBER"
