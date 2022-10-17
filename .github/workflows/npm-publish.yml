@@ -10,9 +10,6 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
-    uses: ./.github/workflows/node.js.yml
-
   publish-npm:
     needs: build
     runs-on: ubuntu-latest
