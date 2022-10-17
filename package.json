@@ -1,6 +1,6 @@
 {
   "name": "versioned-storage",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "description": "Local storage with versioning.",
   "main": "index.js",
   "types": "index.d.ts",
