@@ -27,6 +27,7 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - run: yarn install
       - run: yarn build
+      - run: npm whoami
       - run: npm config ls -l
       - run: npm publish
         env:
