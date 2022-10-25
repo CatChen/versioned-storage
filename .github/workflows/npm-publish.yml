@@ -55,6 +55,5 @@ jobs:
           yarn install
           yarn build
           yarn registry:github
-          npm whoami
           npm config ls -l
           npm publish
