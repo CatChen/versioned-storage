@@ -91,5 +91,6 @@ jobs:
     needs: release
     if: ${{ needs.release.outputs.head-tag != '' }}
     uses: ./.github/workflows/npm-publish.yml
+    secrets: inherit
     with:
       tag: ${{ needs.release.outputs.head-tag }}
