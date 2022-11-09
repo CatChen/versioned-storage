@@ -25,3 +25,10 @@ jobs:
       - uses: CatChen/node-package-release-action@v0.1
         with:
           release-type: patch
+
+  publish:
+    needs: release
+    uses: ./.github/workflows/npm-publish.yml
+    secrets: inherit
+    with:
+      tag: ${{ needs.release.outputs.head-tag }}
