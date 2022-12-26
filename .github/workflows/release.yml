@@ -23,13 +23,18 @@ on:
         required: true
         default: false
         type: boolean
-      dry-run:
-        description: 'Dry run'
+      skip-if-no-diff:
+        description: 'Skip if no diff'
         required: true
         default: false
         type: boolean
-      skip-if-no-diff:
-        description: 'Skip if no diff'
+      diff-targets:
+        description: 'Diff Targets'
+        required: false
+        default: '{index.*,lib/**/*,package.json,tsconfig.json,README.md,LICENSE}'
+        type: string
+      dry-run:
+        description: 'Dry run'
         required: true
         default: false
         type: boolean
@@ -60,10 +65,11 @@ jobs:
           prerelease: ${{ inputs.prerelease || false }}
           dry-run: ${{ inputs.dry-run || false }}
           skip-if-no-diff: ${{ inputs.skip-if-no-diff || true }}
+          diff-targets: ${{ inputs.diff-targets || '{index.*,lib/**/*,package.json,tsconfig.json,README.md,LICENSE}' }}
 
   publish:
     needs: release
-    if: ${{ needs.release.outputs.diff != 'true' }}
+    if: ${{ needs.release.outputs.skipped != 'true' }}
     uses: ./.github/workflows/npm-publish.yml
     secrets: inherit
     with:
