@@ -18,5 +18,11 @@
   "importOrderSortIndividualImports": true,
   "importOrderMergeDuplicateImports": true,
   "importOrderBuiltinModulesToTop": true,
-  "importOrderTypeImportsToTop": true
+  "importOrderTypeImportsToTop": true,
+  "overrides": [
+    {
+      "files": "src/*.js",
+      "options": { "parser": "babel-flow" }
+    }
+  ]
 }
