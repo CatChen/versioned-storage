@@ -59,7 +59,8 @@ jobs:
           ref: master
           fetch-depth: 0
 
-      - uses: CatChen/node-package-release-action@v1
+      - id: release
+        uses: CatChen/node-package-release-action@v1
         with:
           release-type: ${{ inputs.release-type || 'patch' }}
           prerelease: ${{ inputs.prerelease || false }}
@@ -74,3 +75,4 @@ jobs:
     secrets: inherit
     with:
       tag: ${{ needs.release.outputs.tag }}
+      dry-run: ${{ inputs.dry-run || false }}
