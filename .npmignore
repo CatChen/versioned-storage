@@ -19,8 +19,11 @@
 .babelrc
 .flowconfig
 .mergify.yml
+.nvmrc
 .github
 .husky
+.prettierignore
+.prettierrc.json
 
 npm-debug.log*
 yarn-debug.log*
