@@ -52,7 +52,7 @@
     "rules": {}
   },
   "devDependencies": {
-    "@serverless-guru/prettier-plugin-import-order": "^0.3.0",
+    "@serverless-guru/prettier-plugin-import-order": "^0.4.1",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^10.0.3",
