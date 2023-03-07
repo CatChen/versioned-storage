@@ -56,7 +56,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          ref: master
+          ref: main
           fetch-depth: 0
 
       - id: release

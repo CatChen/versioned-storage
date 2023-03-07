@@ -2,7 +2,7 @@ name: Ship
 
 on:
   pull_request:
-    branches: [master]
+    branches: [main]
     types:
       [
         labeled,
@@ -21,7 +21,7 @@ on:
   check_suite:
     types: [completed]
   workflow_run:
-    branches-ignore: [master]
+    branches-ignore: [main]
     workflows: ['Node.js CI', 'CodeQL']
     types: [completed]
 
@@ -59,11 +59,11 @@ jobs:
     name: Accept to Ship
     if: |-
       ${{
-        github.base_ref == 'master' ||
-        github.event.pull_request.base.ref == 'master' ||
-        contains(github.event.check_run.pull_requests.*.base.ref, 'master') ||
-        contains(github.event.check_suite.pull_requests.*.base.ref, 'master') ||
-        contains(github.event.workflow_run.pull_requests.*.base.ref, 'master')
+        github.base_ref == 'main' ||
+        github.event.pull_request.base.ref == 'main' ||
+        contains(github.event.check_run.pull_requests.*.base.ref, 'main') ||
+        contains(github.event.check_suite.pull_requests.*.base.ref, 'main') ||
+        contains(github.event.workflow_run.pull_requests.*.base.ref, 'main')
       }}
     runs-on: ubuntu-latest
     permissions: write-all
@@ -79,11 +79,11 @@ jobs:
     name: Pass to Ship
     if: |-
       ${{
-        github.base_ref == 'master' ||
-        github.event.pull_request.base.ref == 'master' ||
-        contains(github.event.check_run.pull_requests.*.base.ref, 'master') ||
-        contains(github.event.check_suite.pull_requests.*.base.ref, 'master') ||
-        contains(github.event.workflow_run.pull_requests.*.base.ref, 'master')
+        github.base_ref == 'main' ||
+        github.event.pull_request.base.ref == 'main' ||
+        contains(github.event.check_run.pull_requests.*.base.ref, 'main') ||
+        contains(github.event.check_suite.pull_requests.*.base.ref, 'main') ||
+        contains(github.event.workflow_run.pull_requests.*.base.ref, 'main')
       }}
     runs-on: ubuntu-latest
     permissions: write-all
