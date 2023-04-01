@@ -11,7 +11,7 @@
     "registry:github": "cat package.json | json -e 'this.name = \"@CatChen/\" + this.name; this.publishConfig = {}; this.publishConfig.registry = \"https://npm.pkg.github.com/\"' > package.github.json && mv -f package.github.json package.json",
     "registry:npm": "cat package.json | json -e 'this.name = this.name.replace(new RegExp(\"^@CatChen/\"), \"\"); this.publishConfig = undefined' > package.npm.json && mv -f package.npm.json package.json",
     "prepublish": "npm run build",
-    "postinstall": "fn() { if [ $CI != 'true' ]; then husky install; fi; }; fn",
+    "postinstall": "is-ci || husky install",
     "prepublishOnly": "pinst --disable",
     "postpublish": "pinst --enable"
   },
