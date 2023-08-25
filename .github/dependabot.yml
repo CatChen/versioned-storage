@@ -16,6 +16,9 @@ updates:
       interval: daily
       time: '03:00'
       timezone: US/Pacific
+    groups:
+      development-dependencies:
+        dependency-type: 'development'
     assignees:
       - catchen
     registries:
