@@ -2045,10 +2045,10 @@ flatted@^3.1.0:
   resolved "https://registry.yarnpkg.com/flatted/-/flatted-3.1.1.tgz#c4b489e80096d9df1dfc97c79871aea7c617c469"
   integrity sha512-zAoAQiudy+r5SvnSw3KJy5os/oRJYHzrzja/tBDqrZtNhUw8bt6y8OBzMWcjWr+8liV8Eb6yOhw8WZ7VFZ5ZzA==
 
-flow-bin@^0.217.0:
-  version "0.217.2"
-  resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.217.2.tgz#96affa17f3cb303019f740bffeb28cfab7ce1250"
-  integrity sha512-fk4NcfybYjzlww1sEsfk71nqXvonAYpMRFEjmZxibDWWBiaw8DGmqXWZ7XzSunVB15VkJfOstn/sYP1EYPPyWg==
+flow-bin@^0.218.0:
+  version "0.218.0"
+  resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.218.0.tgz#f91acd8a31d472cd8568442819d925c0881081f7"
+  integrity sha512-u4E0+AIoKKMSuv09Co2mNiQB2DqCcakWtMAPbMkVvvTTNoBSo+gYKrYKoRrmb0QqhdyHy1mRXQXjESW8Lml/MA==
 
 flow-copy-source@^2.0.8:
   version "2.0.9"
@@ -2061,17 +2061,17 @@ flow-copy-source@^2.0.8:
     kefir "^3.7.3"
     yargs "^15.0.1"
 
-flow-parser@^0.217.2:
-  version "0.217.2"
-  resolved "https://registry.yarnpkg.com/flow-parser/-/flow-parser-0.217.2.tgz#3a4aade40ea55a863295120a0b0da8a960967ad6"
-  integrity sha512-O+nt/FLXa1hTwtW0O9h36iZjbL84G8e1uByx5dDXMC97AJEbZXwJ4ohfaE8BNWrYFyYX0NGfz1o8AtLQvaaD/Q==
+flow-parser@^0.218.0:
+  version "0.218.0"
+  resolved "https://registry.yarnpkg.com/flow-parser/-/flow-parser-0.218.0.tgz#ec2e446b00eba373c661b4f5ccd9705996278c0a"
+  integrity sha512-mk4e7UK4P/W3tjrJyto6oxPuCjwvRMyzBh72hTl8T0dOcTzkP0M2JJHpncgyhKphMFi9pnjwHfc8e0oe4Uk3LA==
 
 flow-remove-types@^2.111.3:
-  version "2.217.2"
-  resolved "https://registry.yarnpkg.com/flow-remove-types/-/flow-remove-types-2.217.2.tgz#6a880ef325fafd6d32b10ea26aac47bac5af64ac"
-  integrity sha512-zCS4T7Ru6fzSgzDtw8hAgjpAV+3WxSrtUzx2yBhKL+nQCnvBNd7dQcYC794ioPZo5+yE07UzYXPBFvvp/HihHQ==
+  version "2.218.0"
+  resolved "https://registry.yarnpkg.com/flow-remove-types/-/flow-remove-types-2.218.0.tgz#ef26a31d20b693e29517fd6d6063a3582c79c2b6"
+  integrity sha512-xrgR6+ExvPCcPEQideH6R4dOvB4H7HutYiGw4yPNF7zk2Kzk4NDwWWZff3K8IoYqBycE4DL9eG9gkIYCKxfvlA==
   dependencies:
-    flow-parser "^0.217.2"
+    flow-parser "^0.218.0"
     pirates "^3.0.2"
     vlq "^0.2.1"
 
