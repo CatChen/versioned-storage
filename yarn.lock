@@ -2118,9 +2118,9 @@ flatted@^3.1.0:
   integrity sha512-zAoAQiudy+r5SvnSw3KJy5os/oRJYHzrzja/tBDqrZtNhUw8bt6y8OBzMWcjWr+8liV8Eb6yOhw8WZ7VFZ5ZzA==
 
 flow-bin@^0.219.0:
-  version "0.219.0"
-  resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.219.0.tgz#193ae6551e4eccad7435b2ec0cfa455a40f38889"
-  integrity sha512-nX1hLdYI+mRaO5hG4acjwMni9K3KqQzt3v0pDPHKGu1lEvxEPbL3GxruFbaq8dhKR3Ntk13ptsf2krYubZ1nCw==
+  version "0.219.2"
+  resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.219.2.tgz#46d32f51df0e855974ef97ebda12acce8ff5652a"
+  integrity sha512-E0Dh5ZFIgjeW4VoCEr9KNPG3LS4PKqLMHOGQrzlJ/wOyFQvpNS4gXsxAPeqtxD+MHeV/tVeoD17WYJXkAXpgYw==
 
 flow-copy-source@^2.0.8:
   version "2.0.9"
@@ -2133,17 +2133,17 @@ flow-copy-source@^2.0.8:
     kefir "^3.7.3"
     yargs "^15.0.1"
 
-flow-parser@^0.219.0:
-  version "0.219.0"
-  resolved "https://registry.yarnpkg.com/flow-parser/-/flow-parser-0.219.0.tgz#c8021c080d67a16eea9ee1d1e31c40d1a22bb2fb"
-  integrity sha512-f1RKw+2QW4HCwCQ7qw8fTrlWmQnPIHmWDYbrMhXSSAuDbQbncY63I3Y/vwgimChGF2PT4qtXusu04R3wtCh4hw==
+flow-parser@^0.219.2:
+  version "0.219.2"
+  resolved "https://registry.yarnpkg.com/flow-parser/-/flow-parser-0.219.2.tgz#4d5d2d6784d5d8c856b2fd49f31ed44b06b50b01"
+  integrity sha512-OqzmNECXX85x/5L/OP9TfHErdDoSUoKR4y1sTTy/A5K2arwl7s5EmX0XTkkcJPlCAHYkElWj5Se+ZwNN/6ry2Q==
 
 flow-remove-types@^2.111.3:
-  version "2.219.0"
-  resolved "https://registry.yarnpkg.com/flow-remove-types/-/flow-remove-types-2.219.0.tgz#f349f7785e8c718b256bb8ecb1696d68675e2e86"
-  integrity sha512-wbY4WG+jve9pY0GsG8r5R+Wdo0PQ/HyQi/Gr8p8QIQxNyfYrRtCWICQ1kcGw60+1ufm+yKBw8bIUTv+4LYLjtA==
+  version "2.219.2"
+  resolved "https://registry.yarnpkg.com/flow-remove-types/-/flow-remove-types-2.219.2.tgz#f6ecf62e8389a36b73f737e9a46a6160f9b4af8b"
+  integrity sha512-g0BFqtf882YOntBvMSXXz7qTEsIKuLBefzk0mLy3PkRDDty1jYmxAorDg9xY7ydWNyONohNaeNVg4x33wGpWlw==
   dependencies:
-    flow-parser "^0.219.0"
+    flow-parser "^0.219.2"
     pirates "^3.0.2"
     vlq "^0.2.1"
 
