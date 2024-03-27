@@ -72,7 +72,7 @@
     "typescript": "^5.0.2"
   },
   "optionalDependencies": {
-    "husky": "8"
+    "husky": "9"
   },
   "engines": {
     "node": ">=14"
