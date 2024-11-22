@@ -35,10 +35,5 @@ jobs:
       - run: yarn flow
 
       - run: yarn test src --coverage --collectCoverageFrom=src/**/*.js
-        if: ${{ github.event_name == 'pull_request' }}
-
-      - run: yarn test src
-        if: ${{ github.event_name != 'pull_request' }}
 
       - uses: codecov/codecov-action@v5
-        if: ${{ github.event_name == 'pull_request' }}
