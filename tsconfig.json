@@ -3,8 +3,10 @@
     "rootDir": "src",
     "outDir": "lib",
     "declaration": true,
-    "emitDeclarationOnly": true,
-    "lib": ["es2015"]
+    "lib": ["es2015", "dom"],
+    "module": "es2022",
+    "moduleResolution": "node",
+    "esModuleInterop": true
   },
   "include": ["src"],
   "exclude": ["node_modules", "lib"]

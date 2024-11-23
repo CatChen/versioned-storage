@@ -34,6 +34,6 @@ jobs:
 
       - run: yarn flow
 
-      - run: yarn test src --coverage --collectCoverageFrom=src/**/*.js
+      - run: yarn test src --coverage --collectCoverageFrom=src/**/*.ts
 
       - uses: codecov/codecov-action@v5

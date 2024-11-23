@@ -1,0 +1,10 @@
+{
+  "name": "@catchen/versioned-storage",
+  "version": "3.0.0-0",
+  "license": "MIT",
+  "exports": "./src/Storage.ts",
+  "publish": {
+    "include": ["package.json", "src", "README.md", "LICENSE"],
+    "exclude": ["src/**/__tests__"]
+  }
+}
