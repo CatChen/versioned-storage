@@ -40,14 +40,14 @@ on:
         type: boolean
 
 jobs:
-  build:
-    uses: ./.github/workflows/node.js.yml
+  node:
+    uses: ./.github/workflows/node.yml
 
   codeql:
     uses: ./.github/workflows/codeql-analysis.yml
 
   release:
-    needs: [build, codeql]
+    needs: [node, codeql]
     concurrency: release
     runs-on: ubuntu-latest
     outputs:
@@ -66,9 +66,9 @@ jobs:
           prerelease: ${{ inputs.prerelease || false }}
           dry-run: ${{ inputs.dry-run || false }}
           skip-if-no-diff: ${{ inputs.skip-if-no-diff || true }}
-          diff-targets: ${{ inputs.diff-targets || '{index.*,lib/**/*,package.json,tsconfig.json,README.md,LICENSE}' }}
+          diff-targets: ${{ inputs.diff-targets || '{index.*,src/**/*,package.json,jsr.json,tsconfig.json,README.md,LICENSE}' }}
 
-  publish:
+  npm-publish:
     needs: release
     if: ${{ needs.release.outputs.skipped != 'true' }}
     uses: ./.github/workflows/npm-publish.yml

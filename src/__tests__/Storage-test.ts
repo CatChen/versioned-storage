@@ -1,4 +1,4 @@
-const Storage = require('../Storage');
+import { default as Storage } from '../Storage';
 
 const STORAGE_NAME = 'test_storage';
 const STORAGE_VERSION = 42;
@@ -8,32 +8,36 @@ const TEST_OBJECT = {
   z: false,
 };
 
-let localStorageBackup = null;
-let getItem = jest.fn();
-let setItem = jest.fn();
-let removeItem = jest.fn();
-let clear = jest.fn();
+let localStorageBackup: typeof globalThis.localStorage | null = null;
+let getItem = jest.fn(undefined as typeof globalThis.localStorage.getItem);
+let setItem = jest.fn(undefined as typeof globalThis.localStorage.setItem);
+let removeItem = jest.fn(
+  undefined as typeof globalThis.localStorage.removeItem,
+);
+let clear = jest.fn(undefined as typeof globalThis.localStorage.clear);
 
 beforeEach(() => {
-  getItem = jest.fn();
-  setItem = jest.fn();
-  removeItem = jest.fn();
-  clear = jest.fn();
+  getItem = jest.fn(undefined as typeof globalThis.localStorage.getItem);
+  setItem = jest.fn(undefined as typeof globalThis.localStorage.setItem);
+  removeItem = jest.fn(undefined as typeof globalThis.localStorage.removeItem);
+  clear = jest.fn(undefined as typeof globalThis.localStorage.clear);
   const localStorageMock = {
     getItem,
     setItem,
     removeItem,
     clear,
+    key: jest.fn(),
+    length: 0,
   };
-  localStorageBackup = global.localStorage;
-  Object.defineProperty(global, 'localStorage', {
+  localStorageBackup = globalThis.localStorage;
+  Object.defineProperty(globalThis, 'localStorage', {
     writable: true,
   });
-  global.localStorage = localStorageMock;
+  globalThis.localStorage = localStorageMock;
 });
 
 afterEach(() => {
-  global.localStorage = localStorageBackup;
+  globalThis.localStorage = localStorageBackup;
 });
 
 it('accepts name and version in constructor', () => {
@@ -43,7 +47,7 @@ it('accepts name and version in constructor', () => {
 });
 
 it('stores version number', () => {
-  const storage = new Storage(STORAGE_NAME, STORAGE_VERSION);
+  new Storage(STORAGE_NAME, STORAGE_VERSION);
   expect(setItem.mock.calls.length).toBe(1);
   expect(setItem.mock.calls[0].length).toBe(2);
   expect(setItem.mock.calls[0][0]).toBe(STORAGE_NAME);
@@ -74,7 +78,7 @@ it('clears storage after version bumping', () => {
     expect(key).toBe(STORAGE_NAME);
     return JSON.stringify(STORAGE_VERSION);
   });
-  const storage = new Storage(STORAGE_NAME, STORAGE_VERSION + 1);
+  new Storage(STORAGE_NAME, STORAGE_VERSION + 1);
   expect(removeItem.mock.calls.length).toBe(1);
   expect(removeItem.mock.calls[0].length).toBe(1);
   expect(removeItem.mock.calls[0][0]).toBe(
@@ -141,7 +145,7 @@ it('will throw if localStorage throws', () => {
 it('uses existing version when version is omitted', () => {
   getItem.mockImplementationOnce((key) => {
     expect(key).toBe(STORAGE_NAME);
-    return STORAGE_VERSION;
+    return `${STORAGE_VERSION}`;
   });
   const storage = new Storage(STORAGE_NAME);
   expect(storage.version).toBe(STORAGE_VERSION);

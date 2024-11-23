@@ -1,7 +1,7 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: Node.js CI
+name: Node
 
 on:
   push:
@@ -11,7 +11,7 @@ on:
   workflow_call:
 
 jobs:
-  build:
+  test:
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
@@ -27,6 +27,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
+          check-latest: true
+          cache: yarn
 
       - run: yarn install
 
@@ -34,6 +36,6 @@ jobs:
 
       - run: yarn flow
 
-      - run: yarn test src --coverage --collectCoverageFrom=src/**/*.js
+      - run: yarn test src --coverage --collectCoverageFrom=src/**/*.ts
 
       - uses: codecov/codecov-action@v5

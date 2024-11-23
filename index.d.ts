@@ -1,3 +1,1 @@
-import Storage from './lib/Storage';
-
-export default Storage;
+export { default } from './lib/Storage';

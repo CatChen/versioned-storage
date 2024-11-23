@@ -1,3 +1,9 @@
-// @flow strict
+declare class Storage<T> {
+  name: string;
+  version: number;
 
-module.exports = require('./lib/Storage.js');
+  constructor(name: string, version?: number);
+  read(): ?T;
+  write(value: T): void;
+  static reset(): void;
+}
