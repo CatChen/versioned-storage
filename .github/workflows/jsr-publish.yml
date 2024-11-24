@@ -1,0 +1,45 @@
+name: JSR Package
+
+on:
+  release:
+    types: [created]
+  workflow_call:
+    inputs:
+      tag:
+        type: string
+        required: false
+      dry-run:
+        type: boolean
+        default: false
+        required: false
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  publish-jsr:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        if: ${{ !inputs.dry-run }}
+        with:
+          ref: ${{ inputs.tag }}
+      - uses: actions/checkout@v4
+        if: ${{ inputs.dry-run }}
+        with:
+          ref: ${{ github.ref_name || github.ref }}
+      - uses: denoland/setup-deno@v2
+        with:
+          deno-version: latest
+      - env:
+          DRY_RUN: ${{ inputs.dry-run || false }}
+        run: |
+          deno install
+          if [[ "$DRY_RUN" = true ]]
+          then
+            deno publish --dry-run
+          else
+            deno publish
+          fi

@@ -43,11 +43,14 @@ jobs:
   node:
     uses: ./.github/workflows/node.yml
 
+  deno:
+    uses: ./.github/workflows/deno.yml
+
   codeql:
     uses: ./.github/workflows/codeql-analysis.yml
 
   release:
-    needs: [node, codeql]
+    needs: [node, deno, codeql]
     concurrency: release
     runs-on: ubuntu-latest
     outputs:
@@ -58,6 +61,16 @@ jobs:
         with:
           ref: main
           fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          check-latest: true
+          cache: yarn
+
+      - run: |
+          yarn install
+          yarn husky # Set up pre-commit hook so npm version commit will copy the version to jsr.json
 
       - id: release
         uses: CatChen/node-package-release-action@v2
@@ -73,6 +86,14 @@ jobs:
     if: ${{ needs.release.outputs.skipped != 'true' }}
     uses: ./.github/workflows/npm-publish.yml
     secrets: inherit
+    with:
+      tag: ${{ needs.release.outputs.tag }}
+      dry-run: ${{ inputs.dry-run || false }}
+
+  jsr-publish:
+    needs: release
+    if: ${{ needs.release.outputs.skipped != 'true' }}
+    uses: ./.github/workflows/jsr-publish.yml
     with:
       tag: ${{ needs.release.outputs.tag }}
       dry-run: ${{ inputs.dry-run || false }}
