@@ -1,0 +1,13 @@
+{
+  "name": "@catchen/versioned-storage",
+  "version": "3.0.0-2",
+  "license": "MIT",
+  "exports": "./src/Storage.ts",
+  "compilerOptions": {
+    "lib": ["deno.window"]
+  },
+  "publish": {
+    "include": ["package.json", "src", "README.md", "LICENSE"],
+    "exclude": ["src/**/__tests__"]
+  }
+}
