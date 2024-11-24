@@ -31,7 +31,7 @@ jobs:
 
       - run: deno install
 
-      - run: deno fmt --check --single-quote src
+      - run: deno fmt --check
 
       - run: deno lint
 

@@ -6,6 +6,13 @@
   "compilerOptions": {
     "lib": ["deno.window"]
   },
+  "lint": {
+    "exclude": ["flow-typed/"]
+  },
+  "fmt": {
+    "singleQuote": true,
+    "include": ["src/"]
+  },
   "publish": {
     "include": ["package.json", "src", "README.md", "LICENSE"],
     "exclude": ["src/**/__tests__"]
