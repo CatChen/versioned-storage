@@ -1,5 +1,5 @@
 VERSION=$(cat package.json | yarn --silent json 'version')
-cat jsr.json | yarn --silent json -e 'this.version = "'"$VERSION"'"' > jsr.sync.json
-mv -f jsr.sync.json jsr.json
-git add jsr.json
+cat deno.json | yarn --silent json -e 'this.version = "'"$VERSION"'"' > jsr.sync.json
+mv -f jsr.sync.json deno.json
+git add deno.json
 yarn lint-staged

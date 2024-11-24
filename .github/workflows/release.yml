@@ -31,7 +31,7 @@ on:
       diff-targets:
         description: 'Diff Targets'
         required: false
-        default: '{index.*,src/**/*,package.json,jsr.json,tsconfig.json,README.md,LICENSE}'
+        default: '{index.*,src/**/*,package.json,deno.json,tsconfig.json,README.md,LICENSE}'
         type: string
       dry-run:
         description: 'Dry run'
@@ -70,7 +70,7 @@ jobs:
 
       - run: |
           yarn install
-          yarn husky # Set up pre-commit hook so npm version commit will copy the version to jsr.json
+          yarn husky # Set up pre-commit hook so npm version commit will copy the version to deno.json
 
       - id: release
         uses: CatChen/node-package-release-action@v2
@@ -79,7 +79,7 @@ jobs:
           prerelease: ${{ inputs.prerelease || false }}
           dry-run: ${{ inputs.dry-run || false }}
           skip-if-no-diff: ${{ inputs.skip-if-no-diff || true }}
-          diff-targets: ${{ inputs.diff-targets || '{index.*,src/**/*,package.json,jsr.json,tsconfig.json,README.md,LICENSE}' }}
+          diff-targets: ${{ inputs.diff-targets || '{index.*,src/**/*,package.json,deno.json,tsconfig.json,README.md,LICENSE}' }}
 
   npm-publish:
     needs: release

@@ -37,9 +37,9 @@ jobs:
 
       - run: |
           NPM_VERSION=$(cat package.json | yarn --silent json 'version')
-          JSR_VERSION=$(cat jsr.json | yarn --silent json 'version')
+          JSR_VERSION=$(cat deno.json | yarn --silent json 'version')
           if [[ "$NPM_VERSION" != "$JSR_VERSION" ]]
           then
-            echo "Version mismatch between package.json and jsr.json"
+            echo "Version mismatch between package.json and deno.json"
             exit 1
           fi
