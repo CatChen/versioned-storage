@@ -15,7 +15,6 @@ on:
         type: boolean
         default: false
         required: false
-  workflow_dispatch:
 
 jobs:
   publish-npm:
