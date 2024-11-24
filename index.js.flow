@@ -7,3 +7,5 @@ declare class Storage<T> {
   write(value: T): void;
   static reset(): void;
 }
+
+export default Storage;
