@@ -31,7 +31,7 @@ on:
       diff-targets:
         description: 'Diff Targets'
         required: false
-        default: '{index.*,src/**/*,package.json,tsconfig.json,README.md,LICENSE}'
+        default: '{index.*,src/**/*,package.json,jsr.json,tsconfig.json,README.md,LICENSE}'
         type: string
       dry-run:
         description: 'Dry run'
