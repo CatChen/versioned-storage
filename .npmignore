@@ -31,5 +31,6 @@ yarn-debug.log*
 yarn-error.log*
 
 deno.json
+deno.lock
 eslint.config.js
 jest.config.js
