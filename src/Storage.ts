@@ -34,7 +34,7 @@ function clear(): void {
  * A class that can be instantiated into a storage with a specific name and version.
  * Type T stands for the type of the value that is stored in the storage. It has to be serializable to JSON.
  */
-class Storage<T> {
+export class Storage<T> {
   /**
    * Name of the storage.
    */
@@ -118,5 +118,3 @@ class Storage<T> {
     clear();
   }
 }
-
-export default Storage;
