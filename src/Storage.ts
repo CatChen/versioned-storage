@@ -30,10 +30,28 @@ function clear(): void {
   }
 }
 
+/**
+ * A class that can be instantiated into a storage with a specific name and version.
+ * Type T stands for the type of the value that is stored in the storage. It has to be serializable to JSON.
+ */
 class Storage<T> {
+  /**
+   * Name of the storage.
+   */
   name: string;
+
+  /**
+   * Version of the storage with this particular name.
+   */
   version: number;
 
+  /**
+   * Create or retrieve the storage with the given name and version.
+   * If the version is omitted, it will use the existing version of the storage with the given name.
+   * If there is no existing storage with the given name, it will throw an error.
+   * @param name Name of the storage.
+   * @param version Version of the storage. It has to be a positive integer.
+   */
   constructor(name: string, version?: number) {
     if (version !== undefined) {
       const parsedVersion = parseInt(`${version}`, 10);
@@ -58,6 +76,10 @@ class Storage<T> {
     }
   }
 
+  /**
+   * Read the value from the storage.
+   * @returns The value that is stored in the storage. If there is no value, it returns null.
+   */
   read(): T | null {
     const key = `${this.name}:${this.version}`;
     const jsonString = get(key);
@@ -75,6 +97,10 @@ class Storage<T> {
     return value;
   }
 
+  /**
+   * Write the value to the storage.
+   * @param value The value to be stored in the storage.
+   */
   write(value: T): void {
     const key = `${this.name}:${this.version}`;
     const jsonString = JSON.stringify(value);
@@ -85,6 +111,9 @@ class Storage<T> {
     }
   }
 
+  /**
+   * Reset all storages. (It even wipes out other localStorage content that are not written by this class.)
+   */
   static reset(): void {
     clear();
   }
