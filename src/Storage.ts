@@ -48,7 +48,7 @@ class Storage<T> {
   /**
    * Create or retrieve the storage with the given name and version.
    * If the version is omitted, it will use the existing version of the storage with the given name.
-   * If there is no existing storage with the given name, it will throw an error.b
+   * If there is no existing storage with the given name, it will throw an error.
    * @param name Name of the storage.
    * @param version Version of the storage. It has to be a positive integer.
    */
