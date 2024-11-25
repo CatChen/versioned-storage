@@ -1800,9 +1800,9 @@ flatted@^3.2.9:
   integrity sha512-X8cqMLLie7KsNUDSdzeN8FYK9rEt4Dt67OsG/DNGnYTSDBG4uFAJFBnUeiV+zCVAvwFy56IjM9sH51jVaEhNxw==
 
 flow-bin@^0.254.1:
-  version "0.254.1"
-  resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.254.1.tgz#31a20e8e018b9b86f531c7f40949448f93fac570"
-  integrity sha512-XV9Qv8RFcaSkwkp3TmGzAEnpg2Vp1mz48gXZEQmOZiPKfZiukyOLEuMb19C9CRKLT3ycxuXr3btl5POml3h89g==
+  version "0.254.2"
+  resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.254.2.tgz#eedacf079864c57f7f7fb1b4d055c0b47f328db5"
+  integrity sha512-+dnSUPUSt2KepiGWelhWSgFE2XjTS3V+h5RTFRGx/QIS0kYlfINlI6bcG3/J3+oauIaJsT7//Niqe6EhJX2nQQ==
 
 fs.realpath@^1.0.0:
   version "1.0.0"
@@ -3391,9 +3391,9 @@ typescript-eslint@^8.15.0:
     "@typescript-eslint/utils" "8.15.0"
 
 typescript@^5.0.2:
-  version "5.6.3"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.6.3.tgz#5f3449e31c9d94febb17de03cc081dd56d81db5b"
-  integrity sha512-hjcS1mhfuyi4WW8IWtjP7brDrG2cuDZukyrYrSauoXGNgx0S7zceP07adYkJycEr56BOUTNPzbInooiN3fn1qw==
+  version "5.7.2"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.7.2.tgz#3169cf8c4c8a828cde53ba9ecb3d2b1d5dd67be6"
+  integrity sha512-i5t66RHxDvVN40HfDd1PsEThGNnlMCMT3jMUuoh9/0TaqWevNontacunWyN02LA9/fIbEWlcHZcgTKb9QoaLfg==
 
 update-browserslist-db@^1.0.9:
   version "1.0.10"
