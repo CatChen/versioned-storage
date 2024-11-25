@@ -1,4 +1,4 @@
-import { default as Storage } from '../Storage';
+import { Storage } from '../Storage';
 
 const STORAGE_NAME = 'test_storage';
 const STORAGE_VERSION = 42;
