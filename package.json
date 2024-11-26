@@ -58,8 +58,8 @@
     "node": ">=18"
   },
   "lint-staged": {
-    "*.(js,ts)": "yarn prettier -w",
-    "*.json": "yarn prettier -w",
+    "*.(js,ts,js.flow)": "yarn eslint --fix",
+    "*.json": "yarn eslint --fix",
     "*.(yml,yaml)": "yarn prettier -w",
     "*.(md,markdown)": "yarn prettier -w"
   }

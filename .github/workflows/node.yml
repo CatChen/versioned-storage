@@ -32,6 +32,11 @@ jobs:
 
       - run: yarn install
 
+      - uses: CatChen/eslint-suggestion-action@v4
+        with:
+          targets: 'src'
+          fail-check: ${{ github.event_name == 'workflow_call' || (github.event_name == 'push' && github.ref == 'refs/heads/main') }}
+
       - run: yarn build
 
       - run: yarn flow
@@ -39,3 +44,22 @@ jobs:
       - run: yarn test src --coverage --collectCoverageFrom=src/**/*.ts
 
       - uses: codecov/codecov-action@v5
+
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          check-latest: true
+          cache: yarn
+
+      - run: yarn install
+
+      - uses: CatChen/eslint-suggestion-action@v4
+        with:
+          targets: 'src'
+          fail-check: ${{ github.event_name == 'workflow_call' || (github.event_name == 'push' && github.ref == 'refs/heads/main') }}
