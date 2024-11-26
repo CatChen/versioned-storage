@@ -1,4 +1,4 @@
-declare class Storage<T> {
+declare export class Storage<T> {
   name: string;
   version: number;
 
@@ -7,5 +7,3 @@ declare class Storage<T> {
   write(value: T): void;
   static reset(): void;
 }
-
-export default Storage;

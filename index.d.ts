@@ -1,1 +1,1 @@
-export { default } from './lib/Storage';
+export * from './lib/Storage';
