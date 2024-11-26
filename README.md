@@ -1,4 +1,4 @@
-# versioned-storage [![Node.js CI](https://github.com/CatChen/versioned-storage/workflows/Node.js%20CI/badge.svg)](https://github.com/CatChen/versioned-storage/actions) [![codecov](https://codecov.io/gh/CatChen/versioned-storage/branch/main/graph/badge.svg)](https://codecov.io/gh/CatChen/versioned-storage)
+# versioned-storage [![Node](https://github.com/CatChen/versioned-storage/actions/workflows/node.yml/badge.svg)](https://github.com/CatChen/versioned-storage/actions/workflows/node.yml) [![Deno](https://github.com/CatChen/versioned-storage/actions/workflows/deno.yml/badge.svg)](https://github.com/CatChen/versioned-storage/actions/workflows/deno.yml) [![codecov](https://codecov.io/gh/CatChen/versioned-storage/branch/main/graph/badge.svg)](https://codecov.io/gh/CatChen/versioned-storage)
 
 Use named, versioned and typed ([TypeScript](https://www.typescriptlang.org/) and [Flow](https://flow.org/)) JSON storage through `localStorage`!
 
