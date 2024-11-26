@@ -6,9 +6,6 @@
   "compilerOptions": {
     "lib": ["deno.window"]
   },
-  "lint": {
-    "exclude": ["flow-typed/"]
-  },
   "fmt": {
     "singleQuote": true,
     "include": ["src/"]
