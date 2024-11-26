@@ -4,14 +4,25 @@
   "license": "MIT",
   "exports": "./src/Storage.ts",
   "compilerOptions": {
-    "lib": ["deno.window"]
+    "lib": [
+      "deno.window"
+    ]
   },
   "fmt": {
     "singleQuote": true,
-    "include": ["src/"]
+    "include": [
+      "src/"
+    ]
   },
   "publish": {
-    "include": ["package.json", "src", "README.md", "LICENSE"],
-    "exclude": ["src/**/__tests__"]
+    "include": [
+      "package.json",
+      "src",
+      "README.md",
+      "LICENSE"
+    ],
+    "exclude": [
+      "src/**/__tests__"
+    ]
   }
 }
