@@ -17,7 +17,7 @@ on:
   pull_request_review:
     types: [submitted, edited, dismissed]
   check_run:
-    type: [created, rerequested, completed]
+    types: [created, rerequested, completed]
   check_suite:
     types: [completed]
   workflow_run:
@@ -56,6 +56,7 @@ jobs:
           echo "::notice::Concurrency group is $CONCURRENCY_GROUP"
 
   accept-to-ship:
+    needs: concurrency-group
     name: Accept to Ship
     if: |-
       ${{
@@ -68,14 +69,24 @@ jobs:
     runs-on: ubuntu-latest
     permissions: write-all
     steps:
+      - uses: actions/create-github-app-token@v1
+        id: get-github-app-token
+        with:
+          app-id: ${{ secrets.ACCEPT_TO_SHIP_BOT_APP_ID }}
+          private-key: ${{ secrets.ACCEPT_TO_SHIP_BOT_APP_PRIVATE_KEY }}
+
       - uses: actions/checkout@v4
+        with:
+          token: ${{ steps.get-github-app-token.outputs.token }}
 
       - uses: CatChen/accept-to-ship-action@v0.6
         with:
+          github-token: ${{ steps.get-github-app-token.outputs.token }}
           merge-method: squash
           timeout: 0
 
   pass-to-ship:
+    needs: concurrency-group
     name: Pass to Ship
     if: |-
       ${{
@@ -88,10 +99,19 @@ jobs:
     runs-on: ubuntu-latest
     permissions: write-all
     steps:
+      - uses: actions/create-github-app-token@v1
+        id: get-github-app-token
+        with:
+          app-id: ${{ secrets.ACCEPT_TO_SHIP_BOT_APP_ID }}
+          private-key: ${{ secrets.ACCEPT_TO_SHIP_BOT_APP_PRIVATE_KEY }}
+
       - uses: actions/checkout@v4
+        with:
+          token: ${{ steps.get-github-app-token.outputs.token }}
 
       - uses: CatChen/accept-to-ship-action@v0.6
         with:
+          github-token: ${{ steps.get-github-app-token.outputs.token }}
           merge-method: squash
           timeout: 0
           request-zero-accept-zero: true
