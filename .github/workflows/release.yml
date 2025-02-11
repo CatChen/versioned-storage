@@ -59,11 +59,18 @@ jobs:
       tag: ${{ steps.release.outputs.tag }}
       skipped: ${{ steps.release.outputs.skipped }}
     steps:
+      - uses: actions/create-github-app-token@v1
+        id: get-github-app-token
+        with:
+          app-id: ${{ secrets.ACCEPT_TO_SHIP_BOT_APP_ID }}
+          private-key: ${{ secrets.ACCEPT_TO_SHIP_BOT_APP_PRIVATE_KEY }}
+
       - uses: actions/checkout@v4
         with:
           ref: main
           fetch-depth: 0
-
+          token: ${{ steps.get-github-app-token.outputs.token }}
+          
       - uses: actions/setup-node@v4
         with:
           node-version-file: '.nvmrc'
@@ -82,6 +89,7 @@ jobs:
           dry-run: ${{ inputs.dry-run || false }}
           skip-if-no-diff: ${{ inputs.skip-if-no-diff || github.event_name != 'workflow_dispatch' }}
           diff-targets: ${{ inputs.diff-targets || '{index.*,src/**/*,package.json,deno.json,tsconfig.json,README.md,LICENSE}' }}
+          github-token: ${{ steps.get-github-app-token.outputs.token }}
 
   npm-publish:
     needs: release
