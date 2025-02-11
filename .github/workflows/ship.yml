@@ -84,6 +84,7 @@ jobs:
           github-token: ${{ steps.get-github-app-token.outputs.token }}
           merge-method: squash
           timeout: 0
+          use-auto-merge: true
 
   pass-to-ship:
     needs: concurrency-group
@@ -116,3 +117,4 @@ jobs:
           timeout: 0
           request-zero-accept-zero: true
           custom-hashtag: '#pass2ship'
+          use-auto-merge: true
