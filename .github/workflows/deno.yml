@@ -16,16 +16,25 @@ on:
   workflow_call:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
-  test:
+  validate:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/create-github-app-token@v1
+        id: get-github-app-token
+        with:
+          app-id: ${{ secrets.CHECK_GIT_STATUS_BOT_APP_ID }}
+          private-key: ${{ secrets.CHECK_GIT_STATUS_BOT_APP_PRIVATE_KEY }}
 
-      - uses: denoland/setup-deno@v2
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ steps.get-github-app-token.outputs.token }}
+
+      - name: Use Deno
+        uses: denoland/setup-deno@v2
         with:
           deno-version: latest
 
@@ -35,11 +44,22 @@ jobs:
 
       - run: deno lint
 
-      - run: |
+      - name: Validate JSR package version with NPM package version
+        run: |
           NPM_VERSION=$(cat package.json | yarn --silent json 'version')
           JSR_VERSION=$(cat deno.json | yarn --silent json 'version')
           if [[ "$NPM_VERSION" != "$JSR_VERSION" ]]
           then
-            echo "Version mismatch between package.json ($NPM_VERSION) and deno.json ($JSR_VERSION)"
+            echo "::error::Version mismatch between package.json ($NPM_VERSION) and deno.json ($JSR_VERSION)"
             exit 1
           fi
+
+      - name: Push changes back to the Pull Request
+        uses: CatChen/check-git-status-action@v1
+        id: check-git-status
+        with:
+          fail-if-not-clean: ${{ github.actor != 'dependabot[bot]' || github.actor_id != 49699333 }}
+          push-if-not-clean: true
+          request-changes-if-not-clean: false
+          push-token: ${{ steps.get-github-app-token.outputs.token }}
+
