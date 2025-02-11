@@ -51,6 +51,7 @@ jobs:
           fi
 
   publish-github:
+    name: Publish to GitHub
     runs-on: ubuntu-latest
     permissions:
       contents: read
