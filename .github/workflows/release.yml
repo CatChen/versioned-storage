@@ -52,6 +52,7 @@ jobs:
     uses: ./.github/workflows/codeql-analysis.yml
 
   release:
+    name: Release
     needs: [node, deno, codeql]
     concurrency: release
     runs-on: ubuntu-latest
@@ -70,7 +71,7 @@ jobs:
           ref: main
           fetch-depth: 0
           token: ${{ steps.get-github-app-token.outputs.token }}
-          
+
       - uses: actions/setup-node@v4
         with:
           node-version-file: '.nvmrc'

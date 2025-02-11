@@ -12,6 +12,7 @@ on:
 
 jobs:
   validate:
+    name: Validate
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
