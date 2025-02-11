@@ -42,9 +42,11 @@ on:
 jobs:
   node:
     uses: ./.github/workflows/node.yml
+    secrets: inherit
 
   deno:
     uses: ./.github/workflows/deno.yml
+    secrets: inherit
 
   codeql:
     uses: ./.github/workflows/codeql-analysis.yml
