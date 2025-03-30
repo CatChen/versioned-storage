@@ -52,6 +52,7 @@ jobs:
 
   publish-github:
     name: Publish to GitHub
+    needs: publish-npm
     runs-on: ubuntu-latest
     permissions:
       contents: read
