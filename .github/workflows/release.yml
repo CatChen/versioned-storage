@@ -92,19 +92,19 @@ jobs:
           diff-targets: ${{ inputs.diff-targets || '{index.*,src/**/*,package.json,deno.json,tsconfig.json,README.md,LICENSE}' }}
           github-token: ${{ steps.get-github-app-token.outputs.token }}
 
-  npm-publish:
-    needs: release
-    if: ${{ needs.release.outputs.skipped != 'true' }}
-    uses: ./.github/workflows/npm-publish.yml
-    secrets: inherit
-    with:
-      tag: ${{ needs.release.outputs.tag }}
-      dry-run: ${{ inputs.dry-run || false }}
+  # npm-publish:
+  #   needs: release
+  #   if: ${{ needs.release.outputs.skipped != 'true' }}
+  #   uses: ./.github/workflows/npm-publish.yml
+  #   secrets: inherit
+  #   with:
+  #     tag: ${{ needs.release.outputs.tag }}
+  #     dry-run: ${{ inputs.dry-run || false }}
 
-  jsr-publish:
-    needs: [release, npm-publish]
-    if: ${{ needs.release.outputs.skipped != 'true' }}
-    uses: ./.github/workflows/jsr-publish.yml
-    with:
-      tag: ${{ needs.release.outputs.tag }}
-      dry-run: ${{ inputs.dry-run || false }}
+  # jsr-publish:
+  #   needs: [release, npm-publish]
+  #   if: ${{ needs.release.outputs.skipped != 'true' }}
+  #   uses: ./.github/workflows/jsr-publish.yml
+  #   with:
+  #     tag: ${{ needs.release.outputs.tag }}
+  #     dry-run: ${{ inputs.dry-run || false }}
