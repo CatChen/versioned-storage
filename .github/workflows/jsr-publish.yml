@@ -25,7 +25,7 @@ jobs:
       - uses: actions/checkout@v4
         if: ${{ !inputs.dry-run }}
         with:
-          ref: ${{ inputs.tag }}
+          ref: ${{ inputs.tag || github.event.release.tag_name }}
       - uses: actions/checkout@v4
         if: ${{ inputs.dry-run }}
         with:
@@ -33,10 +33,11 @@ jobs:
       - uses: denoland/setup-deno@v2
         with:
           deno-version: latest
+      - run: |
+          deno install
       - env:
           DRY_RUN: ${{ inputs.dry-run || false }}
         run: |
-          deno install
           if [[ "$DRY_RUN" = true ]]
           then
             deno publish --dry-run
