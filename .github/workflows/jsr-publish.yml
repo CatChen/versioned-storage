@@ -13,14 +13,13 @@ on:
         default: false
         required: false
 
-permissions:
-  contents: read
-  id-token: write
-
 jobs:
   publish-jsr:
     name: Publish to JSR
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
     steps:
       - uses: actions/checkout@v4
         if: ${{ !inputs.dry-run }}
