@@ -20,7 +20,7 @@ updates:
       development-dependencies:
         dependency-type: 'development'
     assignees:
-      - catchen
+      - CatChen
     registries:
       - npm-npmjs
       - npm-registry-npm-pkg-github-com-catchen
@@ -34,6 +34,6 @@ updates:
       time: '03:00'
       timezone: US/Pacific
     assignees:
-      - catchen
+      - CatChen
     labels:
       - pass2ship
