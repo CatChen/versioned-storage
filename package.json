@@ -1,6 +1,6 @@
 {
   "name": "versioned-storage",
-  "version": "3.1.16",
+  "version": "3.1.17-0",
   "description": "Local storage with versioning.",
   "funding": "https://github.com/CatChen/versioned-storage?sponsor=1",
   "type": "module",
