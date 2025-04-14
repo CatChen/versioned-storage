@@ -10,7 +10,7 @@
     "npm:eslint-plugin-flowtype@^8.0.2": "8.0.3_@babel+plugin-syntax-flow@7.26.0__@babel+core@7.26.0_@babel+plugin-transform-react-jsx@7.25.9__@babel+core@7.26.0_eslint@8.57.1",
     "npm:eslint-plugin-prettier@^5.2.1": "5.2.3_eslint@9.15.0_eslint-config-prettier@10.0.1__eslint@9.15.0_prettier@3.3.3",
     "npm:eslint@9": "9.15.0",
-    "npm:flow-bin@0.266": "0.266.0",
+    "npm:flow-bin@0.267": "0.267.0",
     "npm:is-ci@^4.1.0": "4.1.0",
     "npm:jest@^29.0.1": "29.7.0",
     "npm:json@11": "11.0.0",
@@ -296,15 +296,15 @@
     "@eslint-community/eslint-utils@4.4.1_eslint@8.57.1": {
       "integrity": "sha512-s3O3waFUrMV8P/XaF/+ZTp1X9XBZW1a4B97ZnjQF2KYWaFD2A8KyFBsrsfSjEmjn3RGWAIuvlneuZm3CUK3jbA==",
       "dependencies": [
-        "eslint@8.57.1",
-        "eslint-visitor-keys@3.4.3"
+        "eslint-visitor-keys@3.4.3",
+        "eslint@8.57.1"
       ]
     },
     "@eslint-community/eslint-utils@4.4.1_eslint@9.15.0": {
       "integrity": "sha512-s3O3waFUrMV8P/XaF/+ZTp1X9XBZW1a4B97ZnjQF2KYWaFD2A8KyFBsrsfSjEmjn3RGWAIuvlneuZm3CUK3jbA==",
       "dependencies": [
-        "eslint@9.15.0",
-        "eslint-visitor-keys@3.4.3"
+        "eslint-visitor-keys@3.4.3",
+        "eslint@9.15.0"
       ]
     },
     "@eslint-community/regexpp@4.12.1": {
@@ -1159,10 +1159,10 @@
     "eslint-plugin-prettier@5.2.3_eslint@9.15.0_eslint-config-prettier@10.0.1__eslint@9.15.0_prettier@3.3.3": {
       "integrity": "sha512-qJ+y0FfCp/mQYQ/vWQ3s7eUlFEL4PyKfAJxsnYTJ4YT73nsJBWqmEpFryxV9OeUiqmsTsYJ5Y+KDNaeP31wrRw==",
       "dependencies": [
-        "eslint@9.15.0",
         "eslint-config-prettier",
-        "prettier@3.3.3",
+        "eslint@9.15.0",
         "prettier-linter-helpers",
+        "prettier@3.3.3",
         "synckit"
       ]
     },
@@ -1428,8 +1428,8 @@
     "flatted@3.3.2": {
       "integrity": "sha512-AiwGJM8YcNOaobumgtng+6NHuOqC3A7MixFeDafM3X9cIUM+xUXoS5Vfgf+OihAYe20fxqNM9yPBXJzRtZ/4eA=="
     },
-    "flow-bin@0.266.0": {
-      "integrity": "sha512-2icyk/Z4Q0UtcEg9vRuPafUBNup3qlz01nZFw1SuixoTh3SUTrzsrVBaMJLlq/NQMZCKaf+uQczbwvuKQ/jyzQ=="
+    "flow-bin@0.267.0": {
+      "integrity": "sha512-NsBcxdAqQauzgOaDf960M+eEnjcFS6FeMs93dEpkvQflwMlP4SRMdKQR8p5WzJJh07CXq9iQnxn+JjLN6kaLUw=="
     },
     "fs.realpath@1.0.0": {
       "integrity": "sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw=="
@@ -2646,7 +2646,7 @@
         "npm:eslint-plugin-flowtype@^8.0.2",
         "npm:eslint-plugin-prettier@^5.2.1",
         "npm:eslint@9",
-        "npm:flow-bin@0.266",
+        "npm:flow-bin@0.267",
         "npm:is-ci@^4.1.0",
         "npm:jest@^29.0.1",
         "npm:json@11",
