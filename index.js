@@ -1,1 +1,1 @@
-export * from './lib/Storage';
+export * from './lib/Storage.js';
