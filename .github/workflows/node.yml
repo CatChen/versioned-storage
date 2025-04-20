@@ -41,6 +41,9 @@ jobs:
 
       - run: yarn install
 
+      - name: Validate package exports
+        run: node -e 'import("./index.js")'
+
       - name: Run ESLint
         uses: CatChen/eslint-suggestion-action@v4
         if: ${{ matrix.os == 'ubuntu-latest' }} # Prettier replaces \n with \r\n on Windows

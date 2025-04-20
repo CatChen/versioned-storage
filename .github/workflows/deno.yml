@@ -41,6 +41,9 @@ jobs:
 
       - run: deno install
 
+      - name: Validate package exports
+        run: deno eval 'import "./src/Storage.ts"'
+
       - run: deno fmt --check
 
       - run: deno lint
@@ -63,4 +66,3 @@ jobs:
           push-if-not-clean: true
           request-changes-if-not-clean: false
           push-token: ${{ steps.get-github-app-token.outputs.token }}
-
