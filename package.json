@@ -52,7 +52,7 @@
   },
   "optionalDependencies": {
     "husky": "^9.1.4",
-    "lint-staged": "^15.2.7"
+    "lint-staged": "^16.0.0"
   },
   "engines": {
     "node": ">=18"
