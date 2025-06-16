@@ -34,7 +34,7 @@
     "@eslint/eslintrc": "^3.2.0",
     "@eslint/js": "^9.15.0",
     "@serverless-guru/prettier-plugin-import-order": "^0.4.1",
-    "@types/jest": "^29.5.14",
+    "@types/jest": "^30.0.0",
     "codecov": "^3.6.1",
     "eslint": "^9.0.0",
     "eslint-config-prettier": "^10.0.1",
