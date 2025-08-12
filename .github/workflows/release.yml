@@ -66,7 +66,7 @@ jobs:
           app-id: ${{ secrets.CHECK_GIT_STATUS_BOT_APP_ID }}
           private-key: ${{ secrets.CHECK_GIT_STATUS_BOT_APP_PRIVATE_KEY }}
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           ref: main
           fetch-depth: 0

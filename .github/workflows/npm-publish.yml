@@ -19,11 +19,11 @@ jobs:
     name: Publish to NPM
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         if: ${{ !inputs.dry-run }}
         with:
           ref: ${{ inputs.tag }}
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         if: ${{ inputs.dry-run }}
         with:
           ref: ${{ github.ref_name || github.ref }}
@@ -55,11 +55,11 @@ jobs:
       contents: read
       packages: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         if: ${{ !inputs.dry-run }}
         with:
           ref: ${{ inputs.tag }}
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         if: ${{ inputs.dry-run }}
         with:
           ref: ${{ github.ref_name || github.ref }}
