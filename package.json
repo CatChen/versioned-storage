@@ -32,11 +32,11 @@
   "homepage": "https://github.com/CatChen/versioned-storage#readme",
   "devDependencies": {
     "@eslint/eslintrc": "^3.2.0",
-    "@eslint/js": "^9.15.0",
+    "@eslint/js": "^10.0.1",
     "@serverless-guru/prettier-plugin-import-order": "^0.4.1",
     "@types/jest": "^30.0.0",
     "codecov": "^3.6.1",
-    "eslint": "^9.0.0",
+    "eslint": "^10.0.0",
     "eslint-config-prettier": "^10.0.1",
     "eslint-plugin-flowtype": "^8.0.2",
     "eslint-plugin-prettier": "^5.2.1",
