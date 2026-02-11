@@ -95,6 +95,10 @@ jobs:
   npm-publish:
     needs: release
     if: ${{ needs.release.outputs.skipped != 'true' }}
+    permissions:
+      contents: read
+      id-token: write  # Required for OIDC when calling npm-publish.yml
+      packages: write  # Required for publish-github job in npm-publish.yml
     uses: ./.github/workflows/npm-publish.yml
     secrets: inherit
     with:
