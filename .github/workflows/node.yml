@@ -55,7 +55,7 @@ jobs:
         run: yarn build
 
       - name: Push changes back to the Pull Request
-        uses: CatChen/check-git-status-action@v1
+        uses: CatChen/check-git-status-action@v2
         id: check-git-status
         with:
           fail-if-not-clean: ${{ github.actor != 'dependabot[bot]' || github.actor_id != 49699333 }}
