@@ -9,18 +9,32 @@ const TEST_OBJECT = {
 };
 
 let localStorageBackup: typeof globalThis.localStorage | null = null;
-let getItem = jest.fn(undefined as typeof globalThis.localStorage.getItem);
-let setItem = jest.fn(undefined as typeof globalThis.localStorage.setItem);
-let removeItem = jest.fn(
-  undefined as typeof globalThis.localStorage.removeItem,
-);
-let clear = jest.fn(undefined as typeof globalThis.localStorage.clear);
+let getItem = jest.fn() as jest.MockedFunction<
+  typeof globalThis.localStorage.getItem
+>;
+let setItem = jest.fn() as jest.MockedFunction<
+  typeof globalThis.localStorage.setItem
+>;
+let removeItem = jest.fn() as jest.MockedFunction<
+  typeof globalThis.localStorage.removeItem
+>;
+let clear = jest.fn() as jest.MockedFunction<
+  typeof globalThis.localStorage.clear
+>;
 
 beforeEach(() => {
-  getItem = jest.fn(undefined as typeof globalThis.localStorage.getItem);
-  setItem = jest.fn(undefined as typeof globalThis.localStorage.setItem);
-  removeItem = jest.fn(undefined as typeof globalThis.localStorage.removeItem);
-  clear = jest.fn(undefined as typeof globalThis.localStorage.clear);
+  getItem = jest.fn() as jest.MockedFunction<
+    typeof globalThis.localStorage.getItem
+  >;
+  setItem = jest.fn() as jest.MockedFunction<
+    typeof globalThis.localStorage.setItem
+  >;
+  removeItem = jest.fn() as jest.MockedFunction<
+    typeof globalThis.localStorage.removeItem
+  >;
+  clear = jest.fn() as jest.MockedFunction<
+    typeof globalThis.localStorage.clear
+  >;
   const localStorageMock = {
     getItem,
     setItem,
@@ -37,7 +51,7 @@ beforeEach(() => {
 });
 
 afterEach(() => {
-  globalThis.localStorage = localStorageBackup;
+  globalThis.localStorage = localStorageBackup!;
 });
 
 it('accepts name and version in constructor', () => {
@@ -160,7 +174,7 @@ it('uses existing version when version is omitted', () => {
 it('will throw if there is no existing version when version is omitted', () => {
   getItem.mockImplementationOnce((key) => {
     expect(key).toBe(STORAGE_NAME);
-    return undefined;
+    return null;
   });
   expect(() => {
     new Storage(STORAGE_NAME);
