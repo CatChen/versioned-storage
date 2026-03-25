@@ -3,6 +3,6 @@ export default {
   testMatch: ['**/src/**/__tests__/**/*.ts'],
   testEnvironment: 'node',
   transform: {
-    '^.+.tsx?$': ['ts-jest', {}],
+    '^.+.tsx?$': ['ts-jest', {tsconfig: 'tsconfig.test.json'}],
   },
 };
