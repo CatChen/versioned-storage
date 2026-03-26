@@ -4,12 +4,13 @@
     "outDir": "lib",
     "declaration": true,
     "lib": ["es2015", "dom"],
-    "module": "es2022",
-    "moduleResolution": "bundler",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
     "esModuleInterop": true,
     "skipLibCheck": true,
+    "isolatedModules": true,
     "types": ["jest"]
   },
   "include": ["src"],
-  "exclude": ["node_modules", "lib", "src/__tests__"]
+  "exclude": ["node_modules", "lib"]
 }
