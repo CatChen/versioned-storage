@@ -5,10 +5,9 @@
     "declaration": true,
     "lib": ["es2015", "dom"],
     "module": "es2022",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "esModuleInterop": true,
-    "skipLibCheck": true,
-    "ignoreDeprecations": "6.0"
+    "skipLibCheck": true
   },
   "include": ["src"],
   "exclude": ["node_modules", "lib", "src/__tests__"]
