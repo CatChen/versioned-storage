@@ -6,6 +6,12 @@
   "type": "module",
   "main": "index.js",
   "types": "index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./lib/Storage.js",
+      "types": "./lib/Storage.d.ts"
+    }
+  },
   "scripts": {
     "test": "jest",
     "build": "tsc",
@@ -62,5 +68,6 @@
     "*.json": "yarn eslint --fix",
     "*.(yml,yaml)": "yarn prettier -w",
     "*.(md,markdown)": "yarn prettier -w"
-  }
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }
