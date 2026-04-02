@@ -2,7 +2,7 @@ declare export class Storage<T> {
   name: string;
   version: number;
 
-  constructor(name: string, version?: number);
+  constructor(name: string, version?: number): void;
   read(): ?T;
   write(value: T): void;
   static reset(): void;

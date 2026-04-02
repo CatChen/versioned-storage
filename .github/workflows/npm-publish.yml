@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      id-token: write  # Required for OIDC trusted publishing with npm
+      id-token: write # Required for OIDC trusted publishing with npm
     steps:
       - uses: actions/checkout@v6
         if: ${{ !inputs.dry-run }}
