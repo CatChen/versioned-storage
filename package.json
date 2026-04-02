@@ -15,6 +15,8 @@
   "scripts": {
     "test": "jest",
     "build": "tsc",
+    "format": "prettier --write .",
+    "lint": "eslint -c eslint.config.js",
     "registry:github": "cat package.json | json -e 'this.name = \"@CatChen/\" + this.name; this.publishConfig = {}; this.publishConfig.registry = \"https://npm.pkg.github.com/\"' > package.github.json && mv -f package.github.json package.json",
     "registry:npm": "cat package.json | json -e 'this.name = this.name.replace(new RegExp(\"^@CatChen/\"), \"\"); this.publishConfig = undefined' > package.npm.json && mv -f package.npm.json package.json",
     "prepublish": "rm -rf lib && yarn build",
