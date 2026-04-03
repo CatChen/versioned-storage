@@ -11,15 +11,11 @@ on:
   workflow_call:
 
 jobs:
-  validate:
-    name: Validate
-    strategy:
-      matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
-        node-version: [20.x, 22.x, 24.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
-    runs-on: ${{ matrix.os }}
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
 
     steps:
       - uses: actions/create-github-app-token@v3
@@ -32,10 +28,10 @@ jobs:
         with:
           token: ${{ steps.get-github-app-token.outputs.token }}
 
-      - name: Use Node ${{ matrix.node-version }}
+      - name: Use Node
         uses: actions/setup-node@v6
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version-file: '.nvmrc'
           check-latest: true
           cache: yarn
 
@@ -55,18 +51,60 @@ jobs:
           request-changes-if-not-clean: false
           push-token: ${{ steps.get-github-app-token.outputs.token }}
 
-      - name: Validate package exports
-        run: node -e 'import("./index.js")'
+  eslint:
+    name: ESLint
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Use Node
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: '.nvmrc'
+          check-latest: true
+          cache: yarn
+
+      - run: yarn install
 
       - name: Run ESLint
         uses: CatChen/eslint-suggestion-action@v4
-        if: ${{ matrix.os == 'ubuntu-latest' }} # Prettier replaces \n with \r\n on Windows
         with:
           targets: 'src'
           fail-check: ${{ github.event_name == 'workflow_call' || (github.event_name == 'push' && github.ref == 'refs/heads/main') }}
 
+  validate:
+    name: Validate
+    permissions:
+      contents: read
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        node-version: [20.x, 22.x, 24.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Use Node ${{ matrix.node-version }}
+        uses: actions/setup-node@v6
+        with:
+          node-version: ${{ matrix.node-version }}
+          check-latest: true
+          cache: yarn
+
+      - run: yarn install
+
       - name: Validate code with TypeScript
         run: yarn build
+
+      - name: Validate package exports
+        run: node -e 'import("./index.js")'
 
       - name: Validate code with Flow
         run: yarn flow
