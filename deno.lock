@@ -3,7 +3,7 @@
   "specifiers": {
     "npm:@eslint/eslintrc@^3.2.0": "3.2.0",
     "npm:@eslint/js@^10.0.1": "10.0.1_eslint@10.0.0",
-    "npm:@serverless-guru/prettier-plugin-import-order@~0.4.1": "0.4.2_prettier@3.3.3",
+    "npm:@ianvs/prettier-plugin-sort-imports@^4.7.1": "4.7.1_prettier@3.3.3",
     "npm:@types/jest@30": "30.0.0",
     "npm:codecov@^3.6.1": "3.8.3",
     "npm:eslint-config-prettier@^10.0.1": "10.0.1_eslint@10.0.0",
@@ -15,6 +15,7 @@
     "npm:jest@30": "30.0.0",
     "npm:json@11": "11.0.0",
     "npm:pinst@3": "3.0.0",
+    "npm:prettier-plugin-package@2": "2.0.0_prettier@3.3.3",
     "npm:prettier@^3.0.2": "3.3.3",
     "npm:ts-jest@^29.2.5": "29.3.4_jest@30.0.0_typescript@5.7.2",
     "npm:typescript-eslint@^8.15.0": "8.15.0_eslint@10.0.0_typescript@6.0.2",
@@ -395,6 +396,17 @@
     "@humanwhocodes/retry@0.4.3": {
       "integrity": "sha512-bV0Tgo9K4hfPCek+aMAn81RppFKv2ySDQeMoSZuvTASywNTnVJCArCZE2FWqpvIatKu7VMRLWlR1EazvVhDyhQ=="
     },
+    "@ianvs/prettier-plugin-sort-imports@4.7.1_prettier@3.3.3": {
+      "integrity": "sha512-jmTNYGlg95tlsoG3JLCcuC4BrFELJtLirLAkQW/71lXSyOhVt/Xj7xWbbGcuVbNq1gwWgSyMrPjJc9Z30hynVw==",
+      "dependencies": [
+        "@babel/generator",
+        "@babel/parser",
+        "@babel/traverse",
+        "@babel/types",
+        "prettier",
+        "semver@7.7.2"
+      ]
+    },
     "@isaacs/balanced-match@4.0.1": {
       "integrity": "sha512-yzMTt9lEb8Gv7zRioUilSglI0c0smZ9k5D65677DLWLtWJaXIS3CqcGyUFByYKlnUj6TkjLVs54fBl6+TiGQDQ=="
     },
@@ -702,20 +714,6 @@
     },
     "@pkgr/core@0.2.7": {
       "integrity": "sha512-YLT9Zo3oNPJoBjBc4q8G2mjU4tqIbf5CEOORbUUr48dCD9q3umJ3IPlVqOqDakPfd2HuwccBaqlGhN4Gmr5OWg=="
-    },
-    "@serverless-guru/prettier-plugin-import-order@0.4.2_prettier@3.3.3": {
-      "integrity": "sha512-vRsSDd5Std8KTmDFWiZqGNuS2UmsZ4QxnepzGuOLwWlTj1OC976NnDjF7QtVCYAwSMj+IWJ93PWB74LHQ0x5MQ==",
-      "dependencies": [
-        "@babel/core",
-        "@babel/generator",
-        "@babel/parser",
-        "@babel/traverse",
-        "@babel/types",
-        "javascript-natural-sort",
-        "lodash.clone",
-        "lodash.isequal",
-        "prettier"
-      ]
     },
     "@sinclair/typebox@0.27.8": {
       "integrity": "sha512-+Fj43pSMwJs4KRrH/938Uf+uAELIgVBmQzg/q1YG10djyfA3TnrU8N8XzqCh/okZdszqBQTZf96idMfE5lnwTA=="
@@ -1766,9 +1764,6 @@
       ],
       "bin": true
     },
-    "javascript-natural-sort@0.7.1": {
-      "integrity": "sha512-nO6jcEfZWQXDhOiBtG2KvKyEptz7RVbpGP4vTD2hLBdmNQSsCiicO2Ioinv6UI4y9ukqnBpy+XZ9H6uLNgJTlw=="
-    },
     "jest-changed-files@30.0.0": {
       "integrity": "sha512-rzGpvCdPdEV1Ma83c1GbZif0L2KAm3vXSXGRlpx7yCt0vhruwCNouKNRh3SiVcISHP1mb3iJzjb7tAEnNu1laQ==",
       "dependencies": [
@@ -2195,14 +2190,6 @@
         "p-locate@5.0.0"
       ]
     },
-    "lodash.clone@4.5.0": {
-      "integrity": "sha512-GhrVeweiTD6uTmmn5hV/lzgCQhccwReIVRLHp7LT4SopOjqEZ5BbX8b5WWEtAKasjmy8hR7ZPwsYlxRCku5odg==",
-      "deprecated": true
-    },
-    "lodash.isequal@4.5.0": {
-      "integrity": "sha512-pDo3lu8Jhfjqls6GkMgpahsF9kCyayhgykjyLMNFTKWrpVdAQtYyB4muAMWozBB4ig/dtWAmsMxLEI8wuz+DYQ==",
-      "deprecated": true
-    },
     "lodash.memoize@4.1.2": {
       "integrity": "sha512-t7j+NzmgnQzTAYXcsHYLgimltOV1MXHtlOWf6GjL9Kj8GK5FInw5JotxvbOs+IvV1/Dzo04/fCGfLVs7aXb4Ag=="
     },
@@ -2421,6 +2408,12 @@
       "integrity": "sha512-GbK2cP9nraSSUF9N2XwUwqfzlAFlMNYYl+ShE/V+H8a9uNl/oUqB1w2EL54Jh0OlyRSd8RfWYJ3coVS4TROP2w==",
       "dependencies": [
         "fast-diff"
+      ]
+    },
+    "prettier-plugin-package@2.0.0_prettier@3.3.3": {
+      "integrity": "sha512-d7v5sEUf9AIBYmsjn6kzy9xugvoutgk+pdt1/l3opACE5uHS30LzApezcoHYqDJtvcSPj8SCY/50WIiVYmH3+Q==",
+      "dependencies": [
+        "prettier"
       ]
     },
     "prettier@3.3.3": {
@@ -2833,7 +2826,7 @@
       "dependencies": [
         "npm:@eslint/eslintrc@^3.2.0",
         "npm:@eslint/js@^10.0.1",
-        "npm:@serverless-guru/prettier-plugin-import-order@~0.4.1",
+        "npm:@ianvs/prettier-plugin-sort-imports@^4.7.1",
         "npm:@types/jest@30",
         "npm:codecov@^3.6.1",
         "npm:eslint-config-prettier@^10.0.1",
@@ -2845,6 +2838,7 @@
         "npm:jest@30",
         "npm:json@11",
         "npm:pinst@3",
+        "npm:prettier-plugin-package@2",
         "npm:prettier@^3.0.2",
         "npm:ts-jest@^29.2.5",
         "npm:typescript-eslint@^8.15.0",
