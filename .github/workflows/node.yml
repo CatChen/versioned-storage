@@ -28,6 +28,9 @@ jobs:
         with:
           token: ${{ steps.get-github-app-token.outputs.token }}
 
+      - name: Enable Corepack
+        run: corepack enable
+
       - name: Use Node
         uses: actions/setup-node@v6
         with:
@@ -61,6 +64,9 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
+      - name: Enable Corepack
+        run: corepack enable
+
       - name: Use Node
         uses: actions/setup-node@v6
         with:
@@ -90,6 +96,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v6
+
+      - name: Enable Corepack
+        run: corepack enable
 
       - name: Use Node ${{ matrix.node-version }}
         uses: actions/setup-node@v6

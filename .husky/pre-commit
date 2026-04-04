@@ -1,5 +1,5 @@
-VERSION=$(cat package.json | yarn --silent json 'version')
-cat deno.json | yarn --silent json -e 'this.version = "'"$VERSION"'"' > deno.sync.json
+VERSION=$(cat package.json | yarn json 'version')
+cat deno.json | yarn json -e 'this.version = "'"$VERSION"'"' > deno.sync.json
 mv -f deno.sync.json deno.json
 yarn prettier --write deno.json
 git add deno.json
