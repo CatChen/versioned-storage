@@ -50,8 +50,8 @@ jobs:
 
       - name: Validate JSR package version with NPM package version
         run: |
-          NPM_VERSION=$(jq -r '.version' package.json)
-          JSR_VERSION=$(jq -r '.version' deno.json)
+          NPM_VERSION=$(deno eval "import p from './package.json' with { type: 'json' }; console.log(p.version)")
+          JSR_VERSION=$(deno eval "import p from './deno.json' with { type: 'json' }; console.log(p.version)")
           if [[ "$NPM_VERSION" != "$JSR_VERSION" ]]
           then
             echo "::error::Version mismatch between package.json ($NPM_VERSION) and deno.json ($JSR_VERSION)"
