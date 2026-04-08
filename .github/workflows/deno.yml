@@ -53,8 +53,8 @@ jobs:
 
       - name: Validate JSR package version with NPM package version
         run: |
-          NPM_VERSION=$(cat package.json | yarn json 'version')
-          JSR_VERSION=$(cat deno.json | yarn json 'version')
+          NPM_VERSION=$(jq -r '.version' package.json)
+          JSR_VERSION=$(jq -r '.version' deno.json)
           if [[ "$NPM_VERSION" != "$JSR_VERSION" ]]
           then
             echo "::error::Version mismatch between package.json ($NPM_VERSION) and deno.json ($JSR_VERSION)"
