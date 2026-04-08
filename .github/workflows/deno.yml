@@ -34,9 +34,6 @@ jobs:
         with:
           token: ${{ steps.get-github-app-token.outputs.token }}
 
-      - name: Enable Corepack
-        run: corepack enable
-
       - name: Use Deno
         uses: denoland/setup-deno@v2
         with:
