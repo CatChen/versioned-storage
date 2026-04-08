@@ -97,14 +97,14 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-      - name: Enable Corepack
-        run: corepack enable
-
       - name: Use Node ${{ matrix.node-version }}
         uses: actions/setup-node@v6
         with:
           node-version: ${{ matrix.node-version }}
           check-latest: true
+
+      - name: Enable Corepack
+        run: corepack enable
 
       - name: Get Yarn cache path
         id: yarn-cache
