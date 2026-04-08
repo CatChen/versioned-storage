@@ -72,6 +72,9 @@ jobs:
           fetch-depth: 0
           token: ${{ steps.get-github-app-token.outputs.token }}
 
+      - name: Enable Corepack
+        run: corepack enable
+
       - uses: actions/setup-node@v6
         with:
           node-version-file: '.nvmrc'
@@ -79,7 +82,7 @@ jobs:
           cache: yarn
 
       - run: |
-          yarn install
+          yarn install --immutable
           yarn husky # Set up pre-commit hook so npm version commit will copy the version to deno.json
 
       - id: release
