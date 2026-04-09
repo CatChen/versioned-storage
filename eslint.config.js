@@ -28,7 +28,6 @@ export default ts.config(
       ecmaVersion: 'latest',
       sourceType: 'module',
     },
-    plugins: ['flowtype'],
     rules: {},
     ignorePatterns: [
       'node_modules/**/*',
