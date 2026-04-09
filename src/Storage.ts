@@ -1,33 +1,25 @@
-function get(key: string): string | null {
+function withLocalStorage<T>(fn: () => T): T {
   try {
-    return globalThis.localStorage.getItem(key);
+    return fn();
   } catch {
     throw new Error('localStorage not accessible');
   }
+}
+
+function get(key: string): string | null {
+  return withLocalStorage(() => globalThis.localStorage.getItem(key));
 }
 
 function set(key: string, value: string): void {
-  try {
-    globalThis.localStorage.setItem(key, value);
-  } catch {
-    throw new Error('localStorage not accessible');
-  }
+  withLocalStorage(() => globalThis.localStorage.setItem(key, value));
 }
 
 function remove(key: string): void {
-  try {
-    globalThis.localStorage.removeItem(key);
-  } catch {
-    throw new Error('localStorage not accessible');
-  }
+  withLocalStorage(() => globalThis.localStorage.removeItem(key));
 }
 
 function clear(): void {
-  try {
-    globalThis.localStorage.clear();
-  } catch {
-    throw new Error('localStorage not accessible');
-  }
+  withLocalStorage(() => globalThis.localStorage.clear());
 }
 
 /**
@@ -55,7 +47,7 @@ export class Storage<T> {
   constructor(name: string, version?: number) {
     if (version !== undefined) {
       const parsedVersion = parseInt(`${version}`, 10);
-      if (!parsedVersion || parsedVersion <= 0) {
+      if (Number.isNaN(parsedVersion) || parsedVersion <= 0) {
         throw new Error('version has to be a positive integer');
       }
       this.name = name;
