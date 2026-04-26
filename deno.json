@@ -1,6 +1,6 @@
 {
   "name": "@catchen/versioned-storage",
-  "version": "4.0.9",
+  "version": "4.0.10",
   "license": "MIT",
   "exports": "./src/Storage.ts",
   "compilerOptions": {
