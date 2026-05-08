@@ -9,7 +9,7 @@
     "npm:eslint-config-prettier@^10.0.1": "10.0.1_eslint@10.0.0",
     "npm:eslint-plugin-prettier@^5.2.1": "5.2.3_eslint@10.0.0_eslint-config-prettier@10.0.1__eslint@10.0.0_prettier@3.3.3",
     "npm:eslint@10": "10.0.0",
-    "npm:flow-bin@0.312": "0.312.0",
+    "npm:flow-bin@0.313": "0.313.0",
     "npm:is-ci@^4.1.0": "4.1.0",
     "npm:jest@30": "30.0.0",
     "npm:json@11": "11.0.0",
@@ -853,7 +853,8 @@
       ]
     },
     "@ungap/structured-clone@1.3.0": {
-      "integrity": "sha512-WmoN8qaIAo7WTYWbAZuG8PYEhn5fkz7dZrqTBZ7dtt//lL2Gwms1IcnQ5yHqjDfX8Ft5j4YzDM23f87zBfDe9g=="
+      "integrity": "sha512-WmoN8qaIAo7WTYWbAZuG8PYEhn5fkz7dZrqTBZ7dtt//lL2Gwms1IcnQ5yHqjDfX8Ft5j4YzDM23f87zBfDe9g==",
+      "deprecated": true
     },
     "@unrs/resolver-binding-darwin-arm64@1.7.13": {
       "integrity": "sha512-LIKeCzNSkTWwGHjtiUIfvS96+7kpuyrKq2pzw/0XT2S8ykczj40Hh27oLTbXguCX8tGrCoaD2yXxzwqMMhAzhA==",
@@ -1459,8 +1460,8 @@
     "flatted@3.3.2": {
       "integrity": "sha512-AiwGJM8YcNOaobumgtng+6NHuOqC3A7MixFeDafM3X9cIUM+xUXoS5Vfgf+OihAYe20fxqNM9yPBXJzRtZ/4eA=="
     },
-    "flow-bin@0.312.0": {
-      "integrity": "sha512-SVjNNbWt8d69cj6dLXy5P8pq3p6dpje8cL3PvPEqY2KoloiYdpxjOOEZTFvliZV7gxKzGB83iGLA1ct6TH/7hw==",
+    "flow-bin@0.313.0": {
+      "integrity": "sha512-foqZwKykbfdvEyWI4yIpuJU0I0d06562GogwA+8eRN7Bt/nwqepGLIrZHG6KSTcS79iyAU7ZiQvP8pA90dEhfQ==",
       "bin": true
     },
     "foreground-child@3.3.1": {
@@ -2747,7 +2748,7 @@
         "npm:eslint-config-prettier@^10.0.1",
         "npm:eslint-plugin-prettier@^5.2.1",
         "npm:eslint@10",
-        "npm:flow-bin@0.312",
+        "npm:flow-bin@0.313",
         "npm:is-ci@^4.1.0",
         "npm:jest@30",
         "npm:json@11",
