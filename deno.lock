@@ -9,7 +9,7 @@
     "npm:eslint-config-prettier@^10.0.1": "10.0.1_eslint@10.0.0",
     "npm:eslint-plugin-prettier@^5.2.1": "5.2.3_eslint@10.0.0_eslint-config-prettier@10.0.1__eslint@10.0.0_prettier@3.3.3",
     "npm:eslint@10": "10.0.0",
-    "npm:flow-bin@0.315": "0.315.0",
+    "npm:flow-bin@0.316": "0.316.0",
     "npm:is-ci@^4.1.0": "4.1.0",
     "npm:jest@30": "30.0.0",
     "npm:json@11": "11.0.0",
@@ -1460,8 +1460,8 @@
     "flatted@3.3.2": {
       "integrity": "sha512-AiwGJM8YcNOaobumgtng+6NHuOqC3A7MixFeDafM3X9cIUM+xUXoS5Vfgf+OihAYe20fxqNM9yPBXJzRtZ/4eA=="
     },
-    "flow-bin@0.315.0": {
-      "integrity": "sha512-Z6uioCGGS6GovDi+sIj5F7bpli2oZ6DXh2ey7ga6iRGJJdTd8uA0/KIjTHpHC3Cw9OAhqt+/4NQtYnH8joHcqg==",
+    "flow-bin@0.316.0": {
+      "integrity": "sha512-AzmAMRTcTGtEa86c6z6eFKF4E5j1z8+S7uBMl0fe24rEvb+FROmaSHPXmg8Dsjnn7yaoaERKMl2pgBrOP49uIw==",
       "bin": true
     },
     "foreground-child@3.3.1": {
@@ -2748,7 +2748,7 @@
         "npm:eslint-config-prettier@^10.0.1",
         "npm:eslint-plugin-prettier@^5.2.1",
         "npm:eslint@10",
-        "npm:flow-bin@0.315",
+        "npm:flow-bin@0.316",
         "npm:is-ci@^4.1.0",
         "npm:jest@30",
         "npm:json@11",
