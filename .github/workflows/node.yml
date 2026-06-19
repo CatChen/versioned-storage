@@ -24,7 +24,7 @@ jobs:
           app-id: ${{ secrets.CHECK_GIT_STATUS_BOT_APP_ID }}
           private-key: ${{ secrets.CHECK_GIT_STATUS_BOT_APP_PRIVATE_KEY }}
 
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           token: ${{ steps.get-github-app-token.outputs.token }}
 
@@ -62,7 +62,7 @@ jobs:
       pull-requests: write
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - name: Enable Corepack
         run: corepack enable
@@ -95,7 +95,7 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - name: Use Node ${{ matrix.node-version }}
         uses: actions/setup-node@v6
