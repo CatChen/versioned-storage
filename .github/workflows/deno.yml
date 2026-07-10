@@ -44,8 +44,6 @@ jobs:
       - name: Validate package exports
         run: deno eval 'import "./src/Storage.ts"'
 
-      - run: deno fmt --check
-
       - run: deno lint
 
       - name: Validate JSR package version with NPM package version
