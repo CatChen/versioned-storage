@@ -2,6 +2,7 @@
   "name": "@catchen/versioned-storage",
   "version": "4.0.19",
   "license": "MIT",
+  "minimumDependencyAge": 0,
   "exports": "./src/Storage.ts",
   "compilerOptions": {
     "lib": ["deno.window"]
