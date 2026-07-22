@@ -16,6 +16,8 @@ updates:
       interval: daily
       time: '03:00'
       timezone: US/Pacific
+    cooldown:
+      default-days: 1
     groups:
       development-dependencies:
         dependency-type: 'development'
