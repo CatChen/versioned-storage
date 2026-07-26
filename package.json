@@ -1,6 +1,6 @@
 {
   "name": "versioned-storage",
-  "version": "4.0.19",
+  "version": "4.0.20",
   "description": "Local storage with versioning.",
   "license": "MIT",
   "repository": {
