@@ -7,9 +7,9 @@
     "npm:@types/jest@30": "30.0.0",
     "npm:codecov@^3.6.1": "3.8.3",
     "npm:eslint-config-prettier@^10.0.1": "10.0.1_eslint@10.0.0",
-    "npm:eslint-plugin-prettier@^5.2.1": "5.2.3_eslint@10.0.0_eslint-config-prettier@10.0.1__eslint@10.0.0_prettier@3.3.3",
+    "npm:eslint-plugin-prettier@^5.2.1": "5.2.3_eslint@10.0.0_eslint-config-prettier@10.0.1_prettier@3.3.3",
     "npm:eslint@10": "10.0.0",
-    "npm:flow-bin@0.329": "0.329.0",
+    "npm:flow-bin@0.330": "0.330.0",
     "npm:is-ci@^4.1.0": "4.1.0",
     "npm:jest@30": "30.0.0",
     "npm:json@11": "11.0.0",
@@ -775,7 +775,7 @@
         "@types/yargs-parser"
       ]
     },
-    "@typescript-eslint/eslint-plugin@8.15.0_@typescript-eslint+parser@8.15.0__eslint@10.0.0__typescript@6.0.2_eslint@10.0.0_typescript@6.0.2": {
+    "@typescript-eslint/eslint-plugin@8.15.0_@typescript-eslint+parser@8.15.0_eslint@10.0.0_typescript@6.0.2": {
       "integrity": "sha512-+zkm9AR1Ds9uLWN3fkoeXgFppaQ+uEVtfOV62dDmsy9QCNqlRHWNEck4yarvRNrvRcHQLGfqBNui3cimoz8XAg==",
       "dependencies": [
         "@eslint-community/regexpp",
@@ -1251,7 +1251,7 @@
       ],
       "bin": true
     },
-    "eslint-plugin-prettier@5.2.3_eslint@10.0.0_eslint-config-prettier@10.0.1__eslint@10.0.0_prettier@3.3.3": {
+    "eslint-plugin-prettier@5.2.3_eslint@10.0.0_eslint-config-prettier@10.0.1_prettier@3.3.3": {
       "integrity": "sha512-qJ+y0FfCp/mQYQ/vWQ3s7eUlFEL4PyKfAJxsnYTJ4YT73nsJBWqmEpFryxV9OeUiqmsTsYJ5Y+KDNaeP31wrRw==",
       "dependencies": [
         "eslint",
@@ -1460,8 +1460,8 @@
     "flatted@3.3.2": {
       "integrity": "sha512-AiwGJM8YcNOaobumgtng+6NHuOqC3A7MixFeDafM3X9cIUM+xUXoS5Vfgf+OihAYe20fxqNM9yPBXJzRtZ/4eA=="
     },
-    "flow-bin@0.329.0": {
-      "integrity": "sha512-UO5AB8JlipMBu0lpMw1eBV7EDsn9xS3N4Q/ecu+i4bT1R93eUg7wM6q1sm8SIY9DyjMrQfy/Q4n2xsNfpZQ1kw==",
+    "flow-bin@0.330.0": {
+      "integrity": "sha512-rlGZslBZBOPmMrm7mqtn0r1lZe2jbngmcSThVwThj8c49k4WQ46ZBLAyr98Bx9Smx6TqXPyam6piUKOcBBteKg==",
       "bin": true
     },
     "foreground-child@3.3.1": {
@@ -2748,7 +2748,7 @@
         "npm:eslint-config-prettier@^10.0.1",
         "npm:eslint-plugin-prettier@^5.2.1",
         "npm:eslint@10",
-        "npm:flow-bin@0.329",
+        "npm:flow-bin@0.330",
         "npm:is-ci@^4.1.0",
         "npm:jest@30",
         "npm:json@11",
