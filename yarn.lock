@@ -3030,12 +3030,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"flow-bin@npm:^0.332.0":
-  version: 0.332.0
-  resolution: "flow-bin@npm:0.332.0"
+"flow-bin@npm:^0.333.0":
+  version: 0.333.0
+  resolution: "flow-bin@npm:0.333.0"
   bin:
     flow: cli.js
-  checksum: 10c0/ee1bb51f426c175d01e73cddca946b9d75c7edccb77c936ba833ee396dec28c702ead816950aedc012d25ec7c8b85eb8e871a562031596f2357a758859a5006d
+  checksum: 10c0/a2059a8d6aa13361c6b6fe4407cbca5a54e0d688b3725f38b14686e00d6a88de41fe0aea3ac66a3cc168cb33c6048fa2af84cfd8ed7aa42c30584f28e628438f
   languageName: node
   linkType: hard
 
@@ -5159,8 +5159,8 @@ __metadata:
   linkType: hard
 
 "ts-jest@npm:^29.4.9":
-  version: 29.4.13
-  resolution: "ts-jest@npm:29.4.13"
+  version: 29.4.14
+  resolution: "ts-jest@npm:29.4.14"
   dependencies:
     bs-logger: "npm:^0.2.6"
     fast-json-stable-stringify: "npm:^2.1.0"
@@ -5194,7 +5194,7 @@ __metadata:
       optional: true
   bin:
     ts-jest: cli.js
-  checksum: 10c0/8c0c445ec8793fb877edd1ab9091eee148e2ebbbd678b58f4dfa46ad2c440356ec942ac38591477ef1389256389019fc6b946caf0411f17f2bf9ddc52e711b2f
+  checksum: 10c0/58780804871e5752d7f42e69a38ea0716d0a6330272f3a253cf10dbf8c59390f64f2da6fff3d93dcb1bc514d8fa5d02963d8ef6d062fdfa96113b3aad0fd9331
   languageName: node
   linkType: hard
 
@@ -5419,7 +5419,7 @@ __metadata:
     eslint: "npm:^10.0.0"
     eslint-config-prettier: "npm:^10.0.1"
     eslint-plugin-prettier: "npm:^5.2.1"
-    flow-bin: "npm:^0.332.0"
+    flow-bin: "npm:^0.333.0"
     husky: "npm:^9.1.4"
     is-ci: "npm:^4.1.0"
     jest: "npm:^30.0.0"
