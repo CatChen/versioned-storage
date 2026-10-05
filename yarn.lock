@@ -2749,8 +2749,8 @@ __metadata:
   linkType: hard
 
 "eslint@npm:^10.0.0":
-  version: 10.11.0
-  resolution: "eslint@npm:10.11.0"
+  version: 10.12.0
+  resolution: "eslint@npm:10.12.0"
   dependencies:
     "@eslint-community/eslint-utils": "npm:^4.8.0"
     "@eslint-community/regexpp": "npm:^4.12.2"
@@ -2789,7 +2789,7 @@ __metadata:
       optional: true
   bin:
     eslint: bin/eslint.js
-  checksum: 10c0/c767f45f21d1921b41d70e30b1c8fa7ec4e65c0f43a8d80cc4990ca3d923127fa7b9b3416b8f5be6e877d9286f97d3c51a04ed341bc6aa73c0dba0f463e1f861
+  checksum: 10c0/1302ce8a7df2f67fe8f4014b2f9449bd38eb86903ba7b841d9a8ca5a5daf8ee15442861ab870e96c0074d5f333b405d7b2f16388981f807db410cc3a02178af9
   languageName: node
   linkType: hard
 
@@ -3030,12 +3030,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"flow-bin@npm:^0.333.0":
-  version: 0.333.0
-  resolution: "flow-bin@npm:0.333.0"
+"flow-bin@npm:^0.334.0":
+  version: 0.334.0
+  resolution: "flow-bin@npm:0.334.0"
   bin:
     flow: cli.js
-  checksum: 10c0/a2059a8d6aa13361c6b6fe4407cbca5a54e0d688b3725f38b14686e00d6a88de41fe0aea3ac66a3cc168cb33c6048fa2af84cfd8ed7aa42c30584f28e628438f
+  checksum: 10c0/3c9f738d0bbec84b00a297250e143af05347b7b6d717a2e38ab01109f97d9efd90b1e8bd4cda23fdd84f9da0673c7eb10ffdc1457c122a3d8a6bf4011dff5fd6
   languageName: node
   linkType: hard
 
@@ -5419,7 +5419,7 @@ __metadata:
     eslint: "npm:^10.0.0"
     eslint-config-prettier: "npm:^10.0.1"
     eslint-plugin-prettier: "npm:^5.2.1"
-    flow-bin: "npm:^0.333.0"
+    flow-bin: "npm:^0.334.0"
     husky: "npm:^9.1.4"
     is-ci: "npm:^4.1.0"
     jest: "npm:^30.0.0"
