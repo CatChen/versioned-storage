@@ -3030,12 +3030,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"flow-bin@npm:^0.334.0":
-  version: 0.334.0
-  resolution: "flow-bin@npm:0.334.0"
+"flow-bin@npm:^0.335.0":
+  version: 0.335.0
+  resolution: "flow-bin@npm:0.335.0"
   bin:
     flow: cli.js
-  checksum: 10c0/3c9f738d0bbec84b00a297250e143af05347b7b6d717a2e38ab01109f97d9efd90b1e8bd4cda23fdd84f9da0673c7eb10ffdc1457c122a3d8a6bf4011dff5fd6
+  checksum: 10c0/38a42543bbc24dcdf8fa0cbc17b5774cd503906b13a82ec9017dcf01b1766ee275656155e5a33a2757086b9217fdea3435c84255a9d21006ca175a2542781b4d
   languageName: node
   linkType: hard
 
@@ -4677,11 +4677,11 @@ __metadata:
   linkType: hard
 
 "prettier@npm:^3.0.2":
-  version: 3.9.9
-  resolution: "prettier@npm:3.9.9"
+  version: 3.9.10
+  resolution: "prettier@npm:3.9.10"
   bin:
     prettier: bin/prettier.cjs
-  checksum: 10c0/d50ea2537b2ff7dbd5088a214f4d936484e55c665cea2185b477a55b0770be55f3b156a71f63a9a639def6b334667bb327139dc85f2a1041c0a34752cdc74647
+  checksum: 10c0/0b3531593aa6fb36ac6baf629cb058bda472c59a6938774f931fe55283a07c62e6f56e621b043a82d8a3e21fc284c08c34f9e539fc70072635f79b7bae1a1067
   languageName: node
   linkType: hard
 
@@ -5419,7 +5419,7 @@ __metadata:
     eslint: "npm:^10.0.0"
     eslint-config-prettier: "npm:^10.0.1"
     eslint-plugin-prettier: "npm:^5.2.1"
-    flow-bin: "npm:^0.334.0"
+    flow-bin: "npm:^0.335.0"
     husky: "npm:^9.1.4"
     is-ci: "npm:^4.1.0"
     jest: "npm:^30.0.0"
