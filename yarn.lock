@@ -3057,12 +3057,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"flow-bin@npm:^0.340.0":
-  version: 0.340.0
-  resolution: "flow-bin@npm:0.340.0"
+"flow-bin@npm:^0.342.0":
+  version: 0.342.0
+  resolution: "flow-bin@npm:0.342.0"
   bin:
     flow: cli.js
-  checksum: 10c0/4d11444bc2ec996f9c0a16234f69f3213ecdbdfb81aba8a5110758cadb8ed40680e69c71b1ef39325f16688f108e8595b157c89cb4dfa75100470b16b7dc12ca
+  checksum: 10c0/b238143acbd60115fe43c7915e7ded99c70f841230bbe1dcd6cdbf84f14ad7e4a4227aaa55f001292e5dde49bac27d578ce8cdfe5e64360b3751e8f6f470aad5
   languageName: node
   linkType: hard
 
@@ -5467,7 +5467,7 @@ __metadata:
     eslint: "npm:^10.0.0"
     eslint-config-prettier: "npm:^10.0.1"
     eslint-plugin-prettier: "npm:^5.2.1"
-    flow-bin: "npm:^0.340.0"
+    flow-bin: "npm:^0.342.0"
     husky: "npm:^9.1.4"
     is-ci: "npm:^4.1.0"
     jest: "npm:^30.0.0"
